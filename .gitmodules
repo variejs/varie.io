@@ -1,0 +1,9 @@
+[submodule "resources/docs"]
+	path = resources/docs
+	url = https://github.com/variejs/docs
+[submodule "resources/master"]
+	path = resources/master
+	url = https://github.com/variejs/docs
+[submodule "resources/docs/master"]
+	path = resources/docs/master
+	url = https://github.com/variejs/docs
