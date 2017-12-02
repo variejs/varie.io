@@ -1,6 +1,8 @@
 <template>
     <div class="flex flex-wrap">
-        <div class="md:w-1/4" v-html="menu"></div>
+        <div class="md:w-1/4">
+            <component :is="menu"></component>
+        </div>
         <router-view class="container py-4 pl-4 md:w-3/4"></router-view>
     </div>
 </template>
@@ -12,7 +14,7 @@
   export default Vue.extend({
     data() {
       return {
-        version : 'latest',
+        version : this.$route.params.version ? this.$route.params.version : 'latest',
       }
     },
     computed : {
@@ -20,7 +22,9 @@
         return $container.get('$documentationService');
       },
       menu() {
-        return this.documentationService.menu(this.version);
+        return {
+          template : this.documentationService.menu(this.version)
+        };
       }
     }
   });

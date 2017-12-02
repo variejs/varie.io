@@ -11,5 +11,5 @@ import RouterInterface from "varie/lib/routing/RouterInterface";
 $router.route("/", "welcome");
 
 $router.template('/docs', 'documentationArea').group(() => {
-  $router.route('/docs', 'docs').setName('docs');
+  $router.route('/docs/:version?/:page?', 'docs').setName('docs');
 });
