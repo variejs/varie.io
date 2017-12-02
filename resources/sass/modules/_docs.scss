@@ -2,7 +2,7 @@
 
   @screen md {
     &--menu {
-      margin-top: 5.5rem;
+      margin-top: 4.75rem;
     }
 
     &--content {
@@ -11,7 +11,7 @@
   }
 
   ul.flex-1 {
-    @apply .list-reset .border-r-4 .border-red;
+    @apply .border-r-4 .border-grey-lighter;
   }
 
   ul {
@@ -21,7 +21,7 @@
       }
       li {
         a {
-          margin-right: -4px;
+          //margin-right: -4px;
           // .-mr-2
           @apply .block .text-grey-darker .font-bold .p-4;
           &.router-link-active {

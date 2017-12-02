@@ -1,0 +1,53 @@
+
+html, body {
+  font-weight: 300;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Montserrat', sans-serif;
+  @apply .mt-2 .mb-2;
+}
+
+#app {
+  margin-top:7.5rem;
+}
+
+nav {
+  @apply .bg-white .fixed .pin-t .pin-x;
+}
+
+a {
+  @apply .no-underline;
+}
+
+ul {
+  @apply .list-reset;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+code {
+  @apply .overflow-y-scroll;
+}
+
+.navigation {
+  border-bottom-color: #9babb4;
+  border-bottom-width: 1px;
+  a  {
+    @apply .inline-block;
+  }
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}

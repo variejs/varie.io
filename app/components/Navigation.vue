@@ -1,18 +1,21 @@
 <template>
-    <nav class="flex items-center justify-between flex-wrap border-t-4 border-teal p-6 border-b-2 border-b-grey">
+    <nav class="navigation flex items-center justify-between flex-wrap border-t-4 border-teal p-6 border-b-2">
         <div class="flex items-center flex-no-shrink mr-6">
             <router-link to="/" tag="span" class="font-semibold text-xl tracking-tight cursor-pointer">
                 Varie
             </router-link>
         </div>
         <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-            <div class="text-sm lg:flex-grow">
-                <router-link :to="{ name : 'docs', params : { version : 'latest', page : 'installation' } }" class="block mt-4 lg:inline-block lg:mt-0 text-teal-light hover:text-teal mr-4">
+            <div class="lg:flex-grow">
+                <input class="appearance-none p-6 -mt-6 -mb-6 ml-8 w-full bg-transparent border-r-2" type="text" placeholder="Search" name="search">
+            </div>
+        </div>
+        <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+            <div class="lg:flex-grow">
+                <router-link :to="{ name : 'docs', params : { version : 'latest', page : 'installation' } }">
                     Docs
                 </router-link>
-            </div>
-            <div>
-                <a href="https://github.com/variejs/varie" target="_blank" class="inline-block text-sm px-4 py-2 leading-none border rounded text-teal-light border-teal-light hover:text-white hover:bg-teal mt-4 lg:mt-0">GitHub</a>
+                <a href="https://github.com/variejs/varie" target="_blank"><i class="fa fa-github"></i></a>
             </div>
         </div>
     </nav>

@@ -56,34 +56,5 @@
  * @import "utilities/skew-transforms";
  */
 
+@import "modules/base";
 @import "modules/docs";
-
-html, body {
-  font-weight: 300;
-  font-family: 'Open Sans', sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5 {
-   font-family: 'Montserrat', sans-serif;
-   @apply .mt-2 .mb-2;
-}
-
-#app {
-  margin-top:7.5rem;
-}
-
-nav {
-  @apply .bg-white .fixed .pin-t .pin-x;
-}
-
-a {
-  @apply .no-underline;
-}
-
-ul {
-  @apply .list-reset;
-}
