@@ -1,4 +1,15 @@
 .documentation {
+
+  @screen md {
+    &--menu {
+      margin-top: 5.5rem;
+    }
+
+    &--content {
+      margin-left: 20rem;
+    }
+  }
+
   ul {
     @apply .list-reset;
     li {
@@ -6,19 +17,44 @@
         @apply .block .p-3 .border-r-4 .border-grey-lighter;
       }
       li:hover {
-        @apply .bg-grey-lighter .border-purple-light;
+        @apply .bg-grey-lighter .border-teal-light;
       }
       li {
         @apply .block .p-3 .border-r-4 .border-grey-lighter;
         a {
           @apply .text-grey-darker .font-bold .p-4;
           .router-link-active {
-            @at-root ul li li {
-              @apply .border-purple-light;
-            }
+              @apply .border-teal;
           }
         }
       }
     }
   }
+
+  h1,
+  h2 {
+    @apply .block .border-b-2 .border-grey .border-dashed .mb-4 .mt-4 .pb-2;
+  }
+
+  h3,
+  h4,
+  h5 {
+      font-weight : 500;
+      @apply mt-8;
+  }
+
+  p {
+    @apply .mb-4 .text-sm;
+  }
+
+  code {
+    @apply .inline-block .pl-1 .pr-1 .bg-grey-light .rounded-sm;
+  }
+
+  pre {
+    code {
+      @apply .block .border-2 .border-grey .border-dashed .m-6 .p-4;
+    }
+  }
 }
+

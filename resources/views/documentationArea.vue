@@ -1,9 +1,11 @@
 <template>
-    <div class="flex flex-wrap documentation overflow-y-scroll">
-        <div class="md:w-1/4">
-            <component :is="menu"></component>
+    <div class="documentation">
+        <div class="documentation--menu hidden z-50 fixed pin-y pin-l overflow-y-scroll md:overflow-visible scrolling-touch md:scrolling-auto w-4/5 md:w-full md:max-w-xs flex-none border-r-2 md:flex flex-col" >
+            <component class="flex-1 overflow-y-scroll" :is="menu"></component>
         </div>
-        <router-view class="container py-4 pl-4 md:w-3/4"></router-view>
+        <div class="documentation--content md:ml-80">
+            <router-view></router-view>
+        </div>
     </div>
 </template>
 

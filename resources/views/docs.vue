@@ -1,5 +1,5 @@
 <template>
-   <section v-html="content"></section>
+   <div class="px-6 pb-8 pt-20 md:pt-16 w-full max-w-lg mx-auto" v-html="content"></div>
 </template>
 
 <script>

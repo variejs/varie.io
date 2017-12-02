@@ -57,3 +57,18 @@
  */
 
 @import "modules/docs";
+
+html, body {
+  font-weight: 300;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+   font-family: 'Montserrat', sans-serif;
+   @apply .mt-2 .mb-2;
+}
+
