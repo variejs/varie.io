@@ -72,3 +72,18 @@ h5 {
    @apply .mt-2 .mb-2;
 }
 
+#app {
+  margin-top:7.5rem;
+}
+
+nav {
+  @apply .bg-white .fixed .pin-t .pin-x;
+}
+
+a {
+  @apply .no-underline;
+}
+
+ul {
+  @apply .list-reset;
+}

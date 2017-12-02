@@ -1,6 +1,6 @@
 <template>
     <div class="documentation">
-        <div class="documentation--menu hidden z-50 fixed pin-y pin-l overflow-y-scroll md:overflow-visible scrolling-touch md:scrolling-auto w-4/5 md:w-full md:max-w-xs flex-none border-r-2 md:flex flex-col" >
+        <div class="documentation--menu z-50 fixed pin-y pin-l overflow-y-scroll md:overflow-visible scrolling-touch md:scrolling-auto md:w-full md:max-w-xs md:flex flex-col">
             <component class="flex-1 overflow-y-scroll" :is="menu"></component>
         </div>
         <div class="documentation--content md:ml-80">
