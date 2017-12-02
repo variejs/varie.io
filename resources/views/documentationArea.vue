@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-wrap">
+    <div class="flex flex-wrap documentation overflow-y-scroll">
         <div class="md:w-1/4">
             <component :is="menu"></component>
         </div>

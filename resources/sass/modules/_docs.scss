@@ -1,0 +1,24 @@
+.documentation {
+  ul {
+    @apply .list-reset;
+    li {
+      h4 {
+        @apply .block .p-3 .border-r-4 .border-grey-lighter;
+      }
+      li:hover {
+        @apply .bg-grey-lighter .border-purple-light;
+      }
+      li {
+        @apply .block .p-3 .border-r-4 .border-grey-lighter;
+        a {
+          @apply .text-grey-darker .font-bold .p-4;
+          .router-link-active {
+            @at-root ul li li {
+              @apply .border-purple-light;
+            }
+          }
+        }
+      }
+    }
+  }
+}
