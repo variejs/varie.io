@@ -36,7 +36,7 @@
       },
       methods : {
         selectVersion(version) {
-          this.$router.push({ name: 'docs', params: { version : version }})
+          this.$router.push({ name: 'docs', params: { version : version }});
         }
       },
       computed : {
@@ -44,7 +44,7 @@
           return this.$route.name === 'docs';
         },
         versions() {
-          return this.documentationService.getVersions()
+          return this.documentationService.getVersions();
         },
         documentationService() {
           return $container.get('$documentationService');

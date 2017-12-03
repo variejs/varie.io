@@ -1,4 +1,5 @@
 import { injectable } from 'inversify'
+import RouterInterface from "varie/lib/routing/RouterInterface";
 import { DocumentationServiceInterface } from '@app/contracts/DocumentationServiceInterface'
 
 @injectable()
@@ -22,7 +23,7 @@ export default class DocumentationService implements DocumentationServiceInterfa
               .replace(/href/g, 'to')
               .replace(/{{version}}/g, version);
       } catch(err) {
-          $container.get('$router').getRouter().push('/404');
+          $container.get<RouterInterface>('$router').getRouter().push('/404');
       }
   }
 

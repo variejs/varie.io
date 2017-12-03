@@ -14,7 +14,7 @@
   export default Vue.extend({
     computed : {
       version () {
-        return this.$route.params.version ? this.$route.params.version : 'latest'
+        return this.$route.params.version ? this.$route.params.version : 'latest';
       },
       documentationService() {
         return $container.get('$documentationService');
