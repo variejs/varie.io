@@ -1,0 +1,12 @@
+.arrow {
+  display: inline-block;
+  height: .5rem;
+  width: .5rem;
+  border: 2px solid gray;
+  border-left: none;
+  border-bottom: none;
+  transform: rotate(45deg);
+  transition: all .2s ease;
+  position: relative;
+  top: -1px;
+}

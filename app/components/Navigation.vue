@@ -1,22 +1,45 @@
 <template>
-    <nav class="navigation flex items-center justify-between flex-wrap border-t-4 border-teal p-6 border-b-2">
-        <div class="flex items-center flex-no-shrink mr-6">
+    <nav class="navigation">
+        <div>
             <router-link to="/" tag="span" class="font-semibold text-xl tracking-tight cursor-pointer">
                 Varie
             </router-link>
         </div>
-        <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-            <div class="lg:flex-grow">
-                <input class="appearance-none p-6 -mt-6 -mb-6 ml-8 w-full bg-transparent border-r-2" type="text" placeholder="Search" name="search">
-            </div>
+        <div class="flex flex-grow">
+            <input class="flex-auto" type="text" placeholder="Search" name="search">
         </div>
-        <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-            <div class="lg:flex-grow">
-                <router-link :to="{ name : 'docs', params : { version : 'latest', page : 'installation' } }">
-                    Docs
-                </router-link>
-                <a href="https://github.com/variejs/varie" target="_blank"><i class="fa fa-github"></i></a>
+        <div>
+            <router-link :to="{ name : 'docs', params : { version : 'latest', page : 'installation' } }">
+                Documentation
+            </router-link>
+        </div>
+        <div class="nav-dropdown" @click="showVersionDropDown = !showVersionDropDown">
+            <div class="dropdown" :class="{ open : showVersionDropDown }">
+                <div class="btn">
+                    {{ selectedVersion }} &nbsp;
+                    <i class="arrow"></i>
+                </div>
+                <div class="dropdown--menu" v-show="showVersionDropDown">
+                    <template v-for="version in versions">
+                        <div @click="selectedVersion = version" class="dropdown--menu-item">{{ version }}</div>
+                    </template>
+                </div>
             </div>
         </div>
     </nav>
 </template>
+
+<script>
+    export default {
+      data() {
+        return {
+          selectedVersion : 'latest',
+          versions : [
+            'latest',
+            'master'
+          ],
+          showVersionDropDown : false,
+        }
+      }
+    }
+</script>

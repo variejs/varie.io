@@ -1,0 +1,22 @@
+.navigation {
+  @apply .flex .flex-no-shrink .border-b .border-t-4 .border-teal;
+  border-bottom-color: #9babb4;
+
+  > div {
+    @apply .flex .flex-no-shrink .border-l;
+    > * {
+      @apply .flex .flex-no-shrink .pt-8 .pb-6 .border-b-4 .border-transparent;
+      padding-right : 3.5rem;
+      padding-left : 3.5rem;
+    }
+
+    a:hover {
+      @apply .border-teal;
+    }
+  }
+
+  .nav-dropdown {
+    flex-basis: 200px;
+    display: flex;
+  }
+}
