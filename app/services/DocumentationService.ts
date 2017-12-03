@@ -4,6 +4,16 @@ import { DocumentationServiceInterface } from '@app/contracts/DocumentationServi
 @injectable()
 export default class DocumentationService implements DocumentationServiceInterface {
 
+  getVersions() {
+      let versions = [];
+      let versionDirectories = require.context(`@resources/docs/`, true, /menu.md/);
+      versionDirectories.keys().forEach((versionDirectory) => {
+          versions.push(versionDirectory.replace('./', '').replace(/\/.*/, ''));
+      });
+
+      return versions;
+  }
+
   menu(version) {
     return require(`@resources/docs/${version}/menu.md`)
         .replace(/<a/g, '<router-link')

@@ -32,17 +32,21 @@
       data() {
         return {
           selectedVersion : this.$route.params.version,
-          versions : [
-            'latest',
-            'master'
-          ],
           showVersionDropDown : false,
         }
       },
       methods : {
         selectVersion(version) {
           this.selectedVersion = version;
-          this.$router.push({ name: 'docs', params: { version : version, page : this.$route.params.page }})
+          this.$router.push({ name: 'docs', params: { version : version }})
+        }
+      },
+      computed : {
+        versions() {
+          return this.documentationService.getVersions()
+        },
+        documentationService() {
+          return $container.get('$documentationService');
         }
       }
     }
