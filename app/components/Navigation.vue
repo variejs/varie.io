@@ -13,7 +13,7 @@
                 Documentation
             </router-link>
         </div>
-        <div class="nav-dropdown" @click="showVersionDropDown = !showVersionDropDown">
+        <div class="nav-dropdown" @click="showVersionDropDown = !showVersionDropDown" v-if="docsPage">
             <div class="dropdown" :class="{ open : showVersionDropDown }">
                 {{ selectedVersion }} &nbsp;
                 <i class="arrow"></i>
@@ -42,6 +42,9 @@
         }
       },
       computed : {
+        docsPage() {
+          return this.$route.name === 'docs';
+        },
         versions() {
           return this.documentationService.getVersions()
         },
