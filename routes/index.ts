@@ -13,3 +13,5 @@ $router.route("/", "welcome");
 $router.template('/docs', 'documentationArea').group(() => {
   $router.route('/docs/:version?/:page?', 'docs').setName('docs');
 });
+
+$router.route("*", '404');

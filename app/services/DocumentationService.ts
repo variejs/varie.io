@@ -15,14 +15,22 @@ export default class DocumentationService implements DocumentationServiceInterfa
   }
 
   menu(version) {
-    return require(`@resources/docs/${version}/menu.md`)
-        .replace(/<a/g, '<router-link')
-        .replace(/a>/g, 'router-link>')
-        .replace(/href/g, 'to')
-        .replace(/{{version}}/g, version);
+      try {
+          return require(`@resources/docs/${version}/menu.md`)
+              .replace(/<a/g, '<router-link')
+              .replace(/a>/g, 'router-link>')
+              .replace(/href/g, 'to')
+              .replace(/{{version}}/g, version);
+      } catch(err) {
+          $container.get('$router').getRouter().push('/404');
+      }
   }
 
   page(version :string , page : string) {
-    return require(`@resources/docs/${version}/${page}.md`);
+      try {
+          return require(`@resources/docs/${version}/${page}.md`);
+      } catch(err) {
+          return false;
+      }
   }
 }

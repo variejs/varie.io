@@ -1,7 +1,7 @@
 <template>
     <div class="documentation">
         <div class="documentation--menu">
-            <component :is="menu"></component>
+            <component :is="menu" v-if="menu && menu.template"></component>
         </div>
         <router-view></router-view>
     </div>
@@ -16,13 +16,13 @@
       version () {
         return this.$route.params.version ? this.$route.params.version : 'latest'
       },
+      documentationService() {
+        return $container.get('$documentationService');
+      },
       menu() {
         return {
           template : this.documentationService.menu(this.version)
         };
-      },
-      documentationService() {
-        return $container.get('$documentationService');
       }
     }
   });
