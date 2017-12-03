@@ -15,7 +15,7 @@
         </div>
         <div class="nav-dropdown" @click="showVersionDropDown = !showVersionDropDown" v-if="docsPage">
             <div class="dropdown" :class="{ open : showVersionDropDown }">
-                {{ selectedVersion }} &nbsp;
+                {{ $route.params.version }} &nbsp;
                 <i class="arrow"></i>
                 <div class="dropdown--menu" v-show="showVersionDropDown">
                     <template v-for="version in versions">
@@ -31,13 +31,11 @@
     export default {
       data() {
         return {
-          selectedVersion : this.$route.params.version,
           showVersionDropDown : false,
         }
       },
       methods : {
         selectVersion(version) {
-          this.selectedVersion = version;
           this.$router.push({ name: 'docs', params: { version : version }})
         }
       },
