@@ -9,7 +9,6 @@
 
 <script>
   import Vue from 'vue';
-  import { DocumentationServiceInterface } from '@app/contracts/DocumentationServiceInterface'
 
   export default Vue.extend({
     data() {
