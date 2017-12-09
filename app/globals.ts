@@ -11,5 +11,5 @@ import ApplicationInterface from "varie/lib/foundation/ApplicationInterface";
 
 declare global {
   const $config: ConfigInterface;
-  const app: ApplicationInterface;
+  const $app: ApplicationInterface;
 }
