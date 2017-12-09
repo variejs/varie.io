@@ -45,7 +45,6 @@
           return this.$route.name === 'docs';
         },
         versions() {
-        	console.info(this.$documentationService);
           return this.$documentationService.getVersions();
         },
       }
