@@ -6,7 +6,7 @@
             </router-link>
         </div>
         <div class="flex flex-grow">
-            <input class="flex-auto" type="text" placeholder="Search" name="search">
+            <input id="search" type="text" placeholder="Search" name="search">
         </div>
         <div>
             <router-link :to="{ name : 'docs', params : { version : versions[0], page : 'installation' } }">
