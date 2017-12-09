@@ -1,7 +1,7 @@
-import { injectable } from 'inversify'
-import ServiceProvider from 'varie/lib/support/ServiceProvider'
-import DocumentationService from '@app/services/DocumentationService';
-import { DocumentationServiceInterface } from '@app/contracts/DocumentationServiceInterface'
+import { injectable } from "inversify";
+import ServiceProvider from "varie/lib/support/ServiceProvider";
+import DocumentationService from "@app/services/DocumentationService";
+import { DocumentationServiceInterface } from "@app/contracts/DocumentationServiceInterface";
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +14,6 @@ import { DocumentationServiceInterface } from '@app/contracts/DocumentationServi
 @injectable()
 export default class DocumentationProvider extends ServiceProvider {
   public register() {
-    $container.bind<DocumentationServiceInterface>('$documentationService').to(DocumentationService).inSingletonScope();
+    this.app.singleton("$documentationService", DocumentationService);
   }
 }

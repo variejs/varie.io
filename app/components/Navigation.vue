@@ -31,6 +31,7 @@
     export default {
       data() {
         return {
+          inject : ['$documentationService'],
           showVersionDropDown : false,
         }
       },
@@ -44,11 +45,9 @@
           return this.$route.name === 'docs';
         },
         versions() {
-          return this.documentationService.getVersions();
+        	console.info(this.$documentationService);
+          return this.$documentationService.getVersions();
         },
-        documentationService() {
-          return $container.get('$documentationService');
-        }
       }
     }
 </script>

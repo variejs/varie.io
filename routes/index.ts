@@ -1,4 +1,4 @@
-let $router = $container.get<RouterInterface>("$router");
+let $router = app.make<RouterInterface>("$router");
 import RouterInterface from "varie/lib/routing/RouterInterface";
 
 /*
@@ -10,8 +10,8 @@ import RouterInterface from "varie/lib/routing/RouterInterface";
 
 $router.route("/", "welcome");
 
-$router.template('/docs', 'documentationArea').group(() => {
-  $router.route('/docs/:version?/:page?', 'docs').setName('docs');
+$router.template("/docs", "documentationArea").group(() => {
+  $router.route("/docs/:version?/:page?", "docs").setName("docs");
 });
 
-$router.route("*", '404');
+$router.route("*", "404");

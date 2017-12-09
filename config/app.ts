@@ -70,7 +70,6 @@ export default {
      * Application Service Providers...
      */
     AppServiceProvider,
-    DocumentationProvider,
-
+    DocumentationProvider
   }
 };

@@ -13,7 +13,7 @@
         return this.$route.params.page ? this.$route.params.page : 'installation';
       },
       content() {
-        return this.$parent.documentationService.page(this.$parent.version, this.page);
+        return this.$parent.$documentationService.page(this.$parent.version, this.page);
       }
     }
   });

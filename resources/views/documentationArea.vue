@@ -12,16 +12,18 @@
   import { DocumentationServiceInterface } from '@app/contracts/DocumentationServiceInterface'
 
   export default Vue.extend({
+    data() {
+    	return {
+            inject : ['$documentationService']
+        }
+    },
     computed : {
       version () {
         return this.$route.params.version ? this.$route.params.version : 'latest';
       },
-      documentationService() {
-        return $container.get('$documentationService');
-      },
       menu() {
         return {
-          template : this.documentationService.menu(this.version)
+          template : this.$documentationService.menu(this.version)
         };
       }
     }

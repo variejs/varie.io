@@ -1,6 +1,6 @@
 const path = require("path");
 const mix = require("laravel-mix");
-const tailwindcss = require('tailwindcss');
+const tailwindcss = require("tailwindcss");
 const env = require("dotenv").config().parsed;
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
@@ -17,17 +17,13 @@ if (process.env.NODE_ENV !== "local") {
 */
 mix
   .typeScript("app/app.ts", "js")
-  .extract([
-    "vue",
-    "vue-router",
-    "vuex"
-  ])
+  .extract(["vue", "vue-router", "vuex"])
   .sass("./resources/sass/app.scss", "css")
   .setPublicPath("public")
   .browserSync({
     open: "external",
-    host: env ? env.SITE_URL : 'varie.dev',
-    proxy: env ? env.SITE_URL : 'varie.dev',
+    host: env ? env.SITE_URL : "varie.dev",
+    proxy: env ? env.SITE_URL : "varie.dev",
     files: ["public/**/*.js", "public/**/*.css"]
   })
   .sourceMaps()
@@ -52,24 +48,24 @@ mix
       }
     },
     module: {
-      rules: [{
-        test: /\.md$/,
-        use: [
-          {
-            loader: "html-loader"
-          },
-          {
-            loader: "markdown-loader",
-            options: {
-
+      rules: [
+        {
+          test: /\.md$/,
+          use: [
+            {
+              loader: "html-loader"
+            },
+            {
+              loader: "markdown-loader",
+              options: {}
             }
-          }
-        ]
-      }]
+          ]
+        }
+      ]
     }
   })
   .options({
     extractVueStyles: true,
     processCssUrls: false,
-    postCss: [ tailwindcss('./tailwind.js') ]
+    postCss: [tailwindcss("./tailwind.js")]
   });
