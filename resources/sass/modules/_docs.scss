@@ -36,6 +36,8 @@
 
   &--menu {
 
+    flex : 0 0 275px;
+
     @apply .pt-4 .border-r .border-grey-light .overflow-auto;
 
     > ul > li {
