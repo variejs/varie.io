@@ -1,7 +1,6 @@
 import { injectable } from "inversify";
 import ServiceProvider from "varie/lib/support/ServiceProvider";
 import DocumentationService from "@app/services/DocumentationService";
-import { DocumentationServiceInterface } from "@app/contracts/DocumentationServiceInterface";
 
 /*
 |--------------------------------------------------------------------------
