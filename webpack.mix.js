@@ -4,7 +4,7 @@ const tailwindcss = require("tailwindcss");
 const env = require("dotenv").config().parsed;
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-if (process.env.NODE_ENV !== "local") {
+if (process.env.NODE_ENV !== "development") {
   mix.config.production = true;
 }
 
@@ -22,8 +22,8 @@ mix
   .setPublicPath("public")
   .browserSync({
     open: "external",
-    host: env ? env.SITE_URL : "varie.dev",
-    proxy: env ? env.SITE_URL : "varie.dev",
+    host: env ? env.SITE_URL : "varie.test",
+    proxy: env ? env.SITE_URL : "varie.test",
     files: ["public/**/*.js", "public/**/*.css"]
   })
   .sourceMaps()

@@ -29,9 +29,9 @@
 
 <script>
     export default {
+      $inject : ['$documentationService'],
       data() {
         return {
-          inject : ['$documentationService'],
           showVersionDropDown : false,
         }
       },

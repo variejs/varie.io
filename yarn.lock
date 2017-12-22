@@ -72,9 +72,18 @@ ajv@^4.9.1:
     co "^4.6.0"
     json-stable-stringify "^1.0.1"
 
-ajv@^5.0.0, ajv@^5.1.0, ajv@^5.1.5, ajv@^5.2.3, ajv@^5.3.0:
+ajv@^5.0.0, ajv@^5.1.0, ajv@^5.1.5, ajv@^5.2.3:
   version "5.5.1"
   resolved "https://registry.yarnpkg.com/ajv/-/ajv-5.5.1.tgz#b38bb8876d9e86bee994956a04e721e88b248eb2"
+  dependencies:
+    co "^4.6.0"
+    fast-deep-equal "^1.0.0"
+    fast-json-stable-stringify "^2.0.0"
+    json-schema-traverse "^0.3.0"
+
+ajv@^5.3.0:
+  version "5.5.2"
+  resolved "https://registry.yarnpkg.com/ajv/-/ajv-5.5.2.tgz#73b5eeca3fab653e3d3f9422b341ad42205dc965"
   dependencies:
     co "^4.6.0"
     fast-deep-equal "^1.0.0"
@@ -3764,8 +3773,8 @@ invariant@^2.2.2:
     loose-envify "^1.0.0"
 
 inversify@^4.5.1:
-  version "4.6.0"
-  resolved "https://registry.yarnpkg.com/inversify/-/inversify-4.6.0.tgz#49abb2ee8fce3c99e1e94f01f36df77c3bfeba75"
+  version "4.9.0"
+  resolved "https://registry.yarnpkg.com/inversify/-/inversify-4.9.0.tgz#caa01f5856cfa0499aaaed9b1a635ef0c4a9f4d3"
 
 invert-kv@^1.0.0:
   version "1.0.0"
@@ -7670,9 +7679,9 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "~1.0.0"
     spdx-expression-parse "~1.0.0"
 
-varie@^0.0.19:
-  version "0.0.19"
-  resolved "https://registry.yarnpkg.com/varie/-/varie-0.0.19.tgz#8d7a601a839aac06625f8e09b6b14799fc7deb41"
+varie@^0.0.21:
+  version "0.0.21"
+  resolved "https://registry.yarnpkg.com/varie/-/varie-0.0.21.tgz#ef56e06e07e266b283d362f2e5b49a4f32a7d9ac"
   dependencies:
     ajv "^5.3.0"
     axios "^0.17.0"

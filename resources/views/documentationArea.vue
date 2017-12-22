@@ -11,11 +11,7 @@
   import Vue from 'vue';
 
   export default Vue.extend({
-    data() {
-    	return {
-            inject : ['$documentationService']
-        }
-    },
+    $inject : ['$documentationService'],
     computed : {
       version () {
         return this.$route.params.version ? this.$route.params.version : 'latest';
