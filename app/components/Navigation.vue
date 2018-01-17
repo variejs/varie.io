@@ -15,7 +15,7 @@
         </div>
         <div class="nav-dropdown" @click="showVersionDropDown = !showVersionDropDown" v-if="docsPage">
             <div class="dropdown" :class="{ open : showVersionDropDown }">
-                {{ $route.params.version }} &nbsp;
+                {{ currentVersion }} &nbsp;
                 <i class="arrow"></i>
                 <div class="dropdown--menu" v-show="showVersionDropDown">
                     <template v-for="version in versions">
@@ -47,6 +47,9 @@
         versions() {
           return this.$documentationService.getVersions();
         },
+        currentVersion() {
+        	return this.$route.params.version ? this.$route.params.version : 'latest';
+        }
       }
     }
 </script>
