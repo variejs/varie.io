@@ -8,11 +8,11 @@
         <div class="flex flex-grow">
             <input id="search" type="text" placeholder="Search" name="search">
         </div>
-        <div>
-            <router-link :to="{ name : 'docs', params : { version : versions[0], page : 'installation' } }">
-                Documentation
-            </router-link>
-        </div>
+        <!--<div>-->
+            <!--<router-link :to="{ name : 'docs', params : { version : versions[0], page : 'installation' } }">-->
+                <!--Documentation-->
+            <!--</router-link>-->
+        <!--</div>-->
         <div class="nav-dropdown" @click="showVersionDropDown = !showVersionDropDown" v-if="docsPage">
             <div class="dropdown" :class="{ open : showVersionDropDown }">
                 {{ currentVersion }} &nbsp;
