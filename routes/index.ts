@@ -10,8 +10,11 @@ import RouterInterface from "varie/lib/routing/RouterInterface";
 
 $router.redirect("/", "/docs");
 
-$router.template("/docs", "layouts/documentation").group(() => {
-  $router.route(":version?/:page?", "docs").setName("docs");
-});
+$router
+  .prefix("/docs")
+  .layout("layouts/documentation")
+  .group(() => {
+    $router.route(":version?/:page?", "docs").setName("docs");
+  });
 
-$router.route("*", "404");
+$router.route("*", "errors/404");
