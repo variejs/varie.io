@@ -1,8 +1,8 @@
 <template>
     <nav class="navigation">
         <div>
-            <router-link to="/" tag="span" class="font-semibold text-xl tracking-tight cursor-pointer">
-                Varie
+            <router-link to="/" tag="span" class="cursor-pointer logo">
+                <img src="/img/varie.png">
             </router-link>
         </div>
         <div class="flex flex-grow">
