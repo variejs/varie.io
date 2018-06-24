@@ -14,6 +14,6 @@ import StateServiceInterface from "varie/lib/state/StateServiceInterface";
 new Application().boot().then(app => {
   new Vue({
     store: app.make<StateServiceInterface>("$store").getStore(),
-    router: app.make<RouterInterface>("$router").getRouter()
+    router: app.make<RouterInterface>("$router").getRouter(),
   }).$mount($config.get("app.mount"));
 });
