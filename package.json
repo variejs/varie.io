@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@types/webpack-env": "^1.13.6",
-    "autoprefixer": "^8.6.3",
+    "autoprefixer": "^8.6.4",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.7.0",
@@ -38,7 +38,7 @@
     "tailwindcss": "^0.6.1",
     "ts-loader": "^4.4.1",
     "typescript": "^2.9.2",
-    "varie": "~0.0.43",
+    "varie": "~0.0.50",
     "vue-loader": "^15.2.4",
     "vue-template-compiler": "^2.5.16",
     "webpack": "^4.12.0",
