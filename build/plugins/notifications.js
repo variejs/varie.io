@@ -1,8 +1,9 @@
 const WebpackNotifierPlugin = require("webpack-notifier");
 
-module.exports = function notificationsPlugin(config) {
+module.exports = function(config) {
   return new WebpackNotifierPlugin({
     title: config.appName,
-    alwaysNotify: true,
+    alwaysNotify: false,
+    skipFirstNotification: true,
   });
 };

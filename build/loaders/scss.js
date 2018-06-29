@@ -1,12 +1,12 @@
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const autoprefixer = require("autoprefixer");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-module.exports = function scssLoader(config) {
+module.exports = function(config) {
   return {
-    test: /\.scss$/,
+    test: /\.s[ac]ss|\.css/,
     use: [
       {
-        loader: MiniCssExtractPlugin.loader,
+        loader: config.hmr ? "style-loader" : MiniCssExtractPlugin.loader,
       },
       {
         loader: "css-loader",
@@ -31,8 +31,8 @@ module.exports = function scssLoader(config) {
           },
           sourceMap: !config.isProduction,
           plugins: () => [
-            require("tailwindcss")("./tailwind.js"),
-            autoprefixer
+              require('tailwindcss')(),
+              autoprefixer
           ],
         },
       },

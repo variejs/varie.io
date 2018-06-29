@@ -1,0 +1,3 @@
+[submodule "resources/docs/latest"]
+	path = resources/docs/latest
+	url = git@github.com:variejs/docs.git
