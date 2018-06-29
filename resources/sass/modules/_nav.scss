@@ -6,7 +6,10 @@
   > div:first-child {
     max-width: 274px;
     .logo {
+      @apply .flex;
       max-width: 100%;
+      align-items: center;
+      padding : 4px 80px 0;
     }
   }
   > div {
