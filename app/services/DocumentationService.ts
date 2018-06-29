@@ -32,7 +32,7 @@ export default class DocumentationService
         .replace(/<a/g, "<router-link")
         .replace(/a>/g, "router-link>")
         .replace(/href/g, "to")
-        .replace(/{{version}}/g, version);
+        .replace(/%7B%7Bversion%7D%7D/g, version);
     } catch (err) {
       this.$router.push("/404");
     }
