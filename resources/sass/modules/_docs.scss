@@ -7,7 +7,18 @@
 
     h1,
     h2 {
-      @apply .block .border-b-2 .border-grey .border-dashed .mb-8 .pb-2 .pt-2;
+      &:not(:first-child) {
+        @apply .block .border-b-2 .border-grey .border-dashed .mt-10 .pb-2 .pt-2 ;
+      }
+    }
+
+    > ul {
+      &:after {
+        content: "\a0";
+        display: block;
+        margin-bottom : 20px;
+        border-bottom: 1px solid #cccccc;
+      }
     }
 
     h3,
@@ -23,12 +34,13 @@
     }
 
     code {
-      @apply .inline-block .pl-1 .pr-1 .bg-grey-light .rounded-sm;
+      @apply .inline-block .bg-grey-light .rounded-sm;
+      vertical-align: text-top;
     }
 
     pre {
       code {
-        @apply .block .border-2 .border-grey .border-dashed .m-6 .p-4;
+        @apply .block .border-2 .border-grey .border-dashed .m-1 .p-1;
       }
     }
   }

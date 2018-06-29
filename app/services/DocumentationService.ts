@@ -40,7 +40,9 @@ export default class DocumentationService
 
   page(version: string, page: string) {
     try {
-      return require(`@resources/docs/${version}/${page}.md`);
+      return require(`@resources/docs/${version}/${page}.md`)
+
+
     } catch (err) {
       return false;
     }
