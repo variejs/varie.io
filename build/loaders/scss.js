@@ -5,6 +5,7 @@ module.exports = function(config) {
   return {
     test: /\.s[ac]ss|\.css/,
     use: [
+      ...(!config.inProduction ? ["cache-loader"] : []),
       {
         loader: config.hmr ? "style-loader" : MiniCssExtractPlugin.loader,
       },
@@ -31,8 +32,8 @@ module.exports = function(config) {
           },
           sourceMap: !config.isProduction,
           plugins: () => [
-              require('tailwindcss')(),
-              autoprefixer
+            require('tailwindcss')(),
+            autoprefixer
           ],
         },
       },
