@@ -1,9 +1,12 @@
 html,
 body,
 #app {
-  min-height: 100%;
+  margin : 0;
   height: 100%;
-  @apply .flex .flex-col .flex-auto;
+  display : flex;
+  flex : 1 1 auto;
+  min-height: 100%;
+  flex-direction: column;
 }
 
 #app {
@@ -16,16 +19,18 @@ h2,
 h3,
 h4,
 h5 {
+  margin: 0;
   font-family: "Montserrat", sans-serif;
-  @apply .mt-2 .mb-2;
 }
 
 a {
-  @apply .no-underline;
+  text-decoration: none;
 }
 
 ul {
-  @apply .list-reset;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 * {

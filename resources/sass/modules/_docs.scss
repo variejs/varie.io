@@ -1,14 +1,26 @@
 .documentation {
-  @apply .flex .flex-auto .overflow-hidden;
+  display : flex;
+  flex : 1 1 auto;
+  overflow: hidden;
+
+  &--body {
+    display : flex;
+    flex : 1 1 auto;
+  }
+
   &--content {
-    @apply .flex-grow .pt-4 .pr-8 .overflow-auto;
-    padding-left: 4rem;
+    overflow: hidden;
+    //@apply .pt-4 .pr-8
+    padding-left: 1rem;
     max-width: 800px;
 
     h1,
     h2 {
       &:not(:first-child) {
-        @apply .block .border-b-2 .border-grey .border-dashed .mt-10 .pb-2 .pt-2 ;
+        display : block;
+        padding : .5rem;
+        margin-top : 2rem;
+        border: 1px dashed $gray;
       }
     }
 
@@ -26,46 +38,55 @@
     h5,
     h6 {
       font-weight: 600;
-      @apply mt-8;
+      margin-top : 1rem;
     }
 
     p {
-      @apply .mb-4;
+      margin-bottom : 1rem;
     }
 
     code {
-      @apply .inline-block .bg-grey-light .rounded-sm;
+      display : inline-block;
+      border-radius: .1rem;
+      background-color : $gray;
       vertical-align: text-top;
     }
 
     pre {
       code {
-        @apply .block .border-2 .border-grey .border-dashed .m-1 .p-1;
+        display : block;
+        border : 1px dashed $gray;
+        margin : 1rem;
+        padding : 1rem;
       }
     }
   }
 
   &--menu {
     flex: 0 0 275px;
-
-    @apply .pt-4 .border-r .border-grey-light .overflow-auto;
+    overflow: auto;
+    padding-top : .5rem;
+    border-right : 1px solid $gray;
 
     > ul > li {
-      @apply mb-8;
+      margin-bottom : 1rem;
 
       h4 {
-        @apply px-6 py-2;
+        padding : 1rem .5rem;
       }
       ul a {
-        @apply block px-6 py-2 .border-r-4 .border-transparent;
+        display : block;
+        padding : .5rem 1rem;
         &:hover,
         &:active,
         &:focus {
-          @apply .border-teal .bg-teal-lightest .text-black;
+          border-right : 5px solid $teal;
+          color : $black;
+          background-color : lighten($teal, 45%);
         }
 
         &.router-link-active {
-          @apply .border-teal;
+          border-color : $teal;
         }
       }
     }
