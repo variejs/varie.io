@@ -4,13 +4,12 @@
   overflow: hidden;
 
   &--body {
-    display : flex;
-    flex : 1 1 auto;
+    overflow: scroll;
+    width: 100%;
   }
 
   &--content {
-    overflow: hidden;
-    //@apply .pt-4 .pr-8
+    overflow: scroll;
     padding-left: 1rem;
     max-width: 800px;
 

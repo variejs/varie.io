@@ -10,7 +10,10 @@
       display : flex;
       max-width: 100%;
       align-items: center;
-      padding : 4px 80px 0; // TODO - this is for the logo to fix properly
+      padding : 4px 80px 0;
+      img {
+        max-width :100%;
+      }
     }
   }
   > div {
