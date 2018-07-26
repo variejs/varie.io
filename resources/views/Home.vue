@@ -1,7 +1,5 @@
 <template>
    <div>
-      <div class="documentation--content" v-html="content" v-if="content"></div>
-      <not-found v-if="!content"></not-found>
    </div>
 </template>
 

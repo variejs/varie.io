@@ -1,14 +1,13 @@
+const loadIf = require("./../helpers/loadIf");
+
 module.exports = function(config) {
   return {
     test: /\.js$/,
     exclude: /(node_modules|bower_components)/,
     use: [
-      ...(!config.inProduction ? ["cache-loader"] : []),
+      ...loadIf(!config.isProduction, ["cache-loader"]),
       {
         loader: "babel-loader",
-        options: {
-          presets: ["babel-preset-env"],
-        },
       },
     ],
   };

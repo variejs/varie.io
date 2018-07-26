@@ -1,46 +1,44 @@
 const autoprefixer = require("autoprefixer");
+const loadIf = require("./../helpers/loadIf");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = function(config) {
   return {
     test: /\.s[ac]ss|\.css/,
     use: [
-      ...(!config.inProduction ? ["cache-loader"] : []),
+      ...loadIf(!config.isProduction, ["cache-loader"]),
       {
-        loader: config.hmr ? "style-loader" : MiniCssExtractPlugin.loader,
+        loader: config.isHot ? "style-loader" : MiniCssExtractPlugin.loader,
       },
       {
         loader: "css-loader",
         options: {
-          sourceMap: !config.isProduction,
-          minimize: config.isProduction,
+          sourceMap: true,
           importLoaders: 1,
-        },
-      },
-      {
-        loader: "resolve-url-loader",
-        options: {
-          sourceMap: !config.isProduction,
+          minimize: config.isProduction,
         },
       },
       {
         loader: "postcss-loader",
         options: {
+          sourceMap: true,
           ident: "postcss",
           autoprefixer: {
             browsers: ["last 2 versions"],
           },
-          sourceMap: !config.isProduction,
-          plugins: () => [
-            require('tailwindcss')(),
-            autoprefixer
-          ],
+          plugins: () => [autoprefixer],
+        },
+      },
+      {
+        loader: "resolve-url-loader",
+        options: {
+          sourceMap: true,
         },
       },
       {
         loader: "sass-loader",
         options: {
-          sourceMap: !config.isProduction,
+          sourceMap: true,
         },
       },
     ],

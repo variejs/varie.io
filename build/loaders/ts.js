@@ -1,13 +1,12 @@
+const loadIf = require("./../helpers/loadIf");
+
 module.exports = function(config) {
   return {
     test: /\.tsx?$/,
     use: [
-      ...(!config.inProduction ? ["cache-loader"] : []),
+      ...loadIf(!config.isProduction, ["cache-loader"]),
       {
         loader: "babel-loader",
-        options: {
-          presets: ["babel-preset-env"],
-        },
       },
       {
         loader: "ts-loader",
