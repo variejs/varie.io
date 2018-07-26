@@ -18,8 +18,10 @@
       }
     },
       watch : {
-        content : () => {
-            Prism.highlightAll();
+        content : function() {
+            this.$nextTick(() => {
+                Prism.highlightAll();
+            })
         }
       }
   });
