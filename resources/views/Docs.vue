@@ -7,6 +7,7 @@
 
 <script>
   import Vue from 'vue';
+  import  Prism from 'prismjs'
   export default Vue.extend({
     computed : {
       page() {
@@ -15,6 +16,11 @@
       content() {
         return this.$parent.$documentationService.page(this.$parent.version, this.page);
       }
-    }
+    },
+      watch : {
+        content : () => {
+            Prism.highlightAll();
+        }
+      }
   });
 </script>

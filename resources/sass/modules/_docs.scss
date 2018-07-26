@@ -50,15 +50,6 @@
       background-color : $gray;
       vertical-align: text-top;
     }
-
-    pre {
-      code {
-        display : block;
-        border : 1px dashed $gray;
-        margin : 1rem;
-        padding : 1rem;
-      }
-    }
   }
 
   &--menu {

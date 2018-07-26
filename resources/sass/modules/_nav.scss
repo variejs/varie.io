@@ -5,9 +5,8 @@
   border-bottom : 1px solid $gray;
 
   > div:first-child {
-    max-width: 274px; // TODO - this is for the logo to fix properly
+    max-width: 274px;
     .logo {
-      display : flex;
       max-width: 100%;
       align-items: center;
       padding : 4px 80px 0;
