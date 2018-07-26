@@ -9,6 +9,7 @@ import ValidationServiceProvider from "varie/lib/validation/ServiceProvider";
 import NotificationsProvider from "varie/lib/plugins/notifications/ServiceProvider";
 import AutoRegisterMixinsServiceProvider from "varie/lib/plugins/autoRegisterMixins/ServiceProvider";
 import AutoRegisterFiltersServiceProvider from "varie/lib/plugins/autoRegisterFilters/ServiceProvider";
+import AutoRegisterLayoutsServiceProvider from "varie/lib/plugins/autoRegisterLayouts/ServiceProvider";
 import AutoRegisterComponentsServiceProvider from "varie/lib/plugins/autoRegisterComponents/ServiceProvider";
 import AutoRegisterDirectivesServiceProvider from "varie/lib/plugins/autoRegisterDirectives/ServiceProvider";
 
@@ -70,6 +71,7 @@ export default {
     ValidationServiceProvider,
     AutoRegisterMixinsServiceProvider,
     AutoRegisterFiltersServiceProvider,
+    AutoRegisterLayoutsServiceProvider,
     AutoRegisterComponentsServiceProvider,
     AutoRegisterDirectivesServiceProvider,
 

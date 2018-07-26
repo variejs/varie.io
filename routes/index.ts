@@ -12,7 +12,7 @@ $router.redirect("/", "/docs");
 
 $router
   .prefix("/docs")
-  .layout("layouts/Documentation")
+  .area("areas/Documentation")
   .group(() => {
     $router.route(":version?/:page?", "Docs").setName("docs");
   });
