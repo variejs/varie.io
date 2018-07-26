@@ -54,7 +54,16 @@ export default {
   |
   */
 
-  scrollBehavior: null,
+  scrollBehavior: (to, from, savedPosition) => {
+    let documentArea = document.getElementById("doc-area");
+    if (to.hash) {
+      return (documentArea.scrollTop = document.getElementById(
+        to.hash.replace("#", ""),
+      ).offsetTop);
+    }
+    documentArea.scrollTop = 0;
+    return { x: 0, y: 0 };
+  },
 
   /*
   |--------------------------------------------------------------------------
@@ -88,5 +97,5 @@ export default {
   |
   */
 
-  fallback: true
+  fallback: true,
 };

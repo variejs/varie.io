@@ -28,28 +28,28 @@
 </template>
 
 <script>
-    export default {
-      $inject : ['$documentationService'],
-      data() {
-        return {
-          showVersionDropDown : false,
-        }
-      },
-      methods : {
-        selectVersion(version) {
-          this.$router.push({ name: 'docs', params: { version : version }});
-        }
-      },
-      computed : {
-        docsPage() {
-          return this.$route.name === 'docs';
-        },
-        versions() {
-          return this.$documentationService.getVersions();
-        },
-        currentVersion() {
-        	return this.$route.params.version ? this.$route.params.version : 'latest';
-        }
-      }
-    }
+export default {
+  $inject: ["$documentationService"],
+  data() {
+    return {
+      showVersionDropDown: false,
+    };
+  },
+  methods: {
+    selectVersion(version) {
+      this.$router.push({ name: "docs", params: { version: version } });
+    },
+  },
+  computed: {
+    docsPage() {
+      return this.$route.name === "docs";
+    },
+    versions() {
+      return this.$documentationService.getVersions();
+    },
+    currentVersion() {
+      return this.$route.params.version ? this.$route.params.version : "latest";
+    },
+  },
+};
 </script>

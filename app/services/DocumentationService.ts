@@ -17,9 +17,9 @@ export default class DocumentationService
     let versionDirectories = require.context(
       `@resources/docs/`,
       true,
-      /menu.md/
+      /menu.md/,
     );
-    versionDirectories.keys().forEach(versionDirectory => {
+    versionDirectories.keys().forEach((versionDirectory) => {
       versions.push(versionDirectory.replace("./", "").replace(/\/.*/, ""));
     });
 
@@ -38,11 +38,33 @@ export default class DocumentationService
     }
   }
 
+  renderRouterLinks(html, version) {
+    let routeName = this.$router.currentRoute.name;
+    let routeParams = this.$router.currentRoute.params;
+
+    return html
+      .replace(
+        /href="#(.*)"/g,
+        `:to='{
+            name : "${routeName}",
+            params : ${JSON.stringify(routeParams)},
+            hash : "#$1"
+          }'`,
+      )
+      .replace(/<a/g, "<router-link")
+      .replace(/a>/g, "router-link>")
+      .replace(/href/g, "to")
+      .replace(/%7B%7Bversion%7D%7D/g, version);
+  }
+
   page(version: string, page: string) {
     try {
-      return require(`@resources/docs/${version}/${page}.md`)
+      let markdownPage = require(`@resources/docs/${version}/${page}.md`);
 
+      markdownPage = this.renderRouterLinks(markdownPage, version);
+      markdownPage = `<div>${markdownPage}</div>`;
 
+      return markdownPage;
     } catch (err) {
       return false;
     }
