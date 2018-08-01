@@ -57,12 +57,14 @@ export default {
   scrollBehavior: (to, from, savedPosition) => {
     let documentArea = document.getElementById("doc-area");
     if (to.hash) {
-      return (documentArea.scrollTop = document.getElementById(
-        to.hash.replace("#", ""),
-      ).offsetTop);
+      let element = document.getElementById(to.hash.replace("#", ""));
+      if (element) {
+        documentArea.scrollTop = element.offsetTop;
+      }
+    } else {
+      documentArea.scrollTop = 0;
+      return { x: 0, y: 0 };
     }
-    documentArea.scrollTop = 0;
-    return { x: 0, y: 0 };
   },
 
   /*

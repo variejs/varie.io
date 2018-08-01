@@ -49,20 +49,20 @@ export default class DocumentationService
             name : "${routeName}",
             params : ${JSON.stringify(routeParams)},
             hash : "#$1"
-          }'`,
+          }'`.replace(/\r?\n|\r/g, ""),
       )
-      .replace(/<a/g, "<router-link")
-      .replace(/a>/g, "router-link>")
-      .replace(/href/g, "to")
+      .replace(/<a (:to.*)>(.*)<.*>/g, "<router-link $1>$2</router-link>")
       .replace(/%7B%7Bversion%7D%7D/g, version);
   }
 
   page(version: string, page: string) {
     try {
-      let markdownPage = require(`@resources/docs/${version}/${page}.md`);
+      let markdownPage = require(`@resources/docs/${version}/${page}.md`).replace();
 
       markdownPage = this.renderRouterLinks(markdownPage, version);
       markdownPage = `<div>${markdownPage}</div>`;
+
+      console.info(markdownPage);
 
       return markdownPage;
     } catch (err) {
