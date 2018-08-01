@@ -1,9 +1,9 @@
 <template>
     <div class="documentation">
-        <div class="documentation--menu">
-            <component :is="menu" v-if="menu && menu.template"></component>
-        </div>
-        <router-view></router-view>
+       <div class="documentation--menu">
+           <component :is="menu" v-if="menu && menu.template"></component>
+       </div>
+       <router-view></router-view>
     </div>
 </template>
 
