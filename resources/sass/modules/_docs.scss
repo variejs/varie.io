@@ -25,11 +25,24 @@
     }
 
     > ul {
+      margin-top: 1rem;
       &:after {
         content: "\a0";
         display: block;
-        margin-bottom : 20px;
+        margin-bottom : 1rem;
         border-bottom: 1px solid #cccccc;
+      }
+    }
+
+    ul {
+      li {
+        a {
+          color : $teal;
+          font-weight : 800;
+          &:before {
+            content : "# "
+          }
+        }
       }
     }
 
