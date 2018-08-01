@@ -51,7 +51,7 @@ export default class DocumentationService
             hash : "#$1"
           }'`.replace(/\r?\n|\r/g, ""),
       )
-      .replace(/<a (:to.*)>(.*)<.*>/g, "<router-link $1>$2</router-link>")
+      .replace(/<a (:to.*)>(.*)<.*\/a>/g, "<router-link $1>$2</router-link>")
       .replace(/%7B%7Bversion%7D%7D/g, version);
   }
 
@@ -60,9 +60,8 @@ export default class DocumentationService
       let markdownPage = require(`@resources/docs/${version}/${page}.md`).replace();
 
       markdownPage = this.renderRouterLinks(markdownPage, version);
+      markdownPage = markdownPage.replace(/{{/g, '<span>&#123;&#123;</span>').replace(/}}/g, '<span>&#125;&#125;</span>')
       markdownPage = `<div>${markdownPage}</div>`;
-
-      console.info(markdownPage);
 
       return markdownPage;
     } catch (err) {
