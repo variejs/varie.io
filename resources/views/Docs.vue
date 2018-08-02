@@ -11,7 +11,7 @@ import Prism from "prismjs";
 export default Vue.extend({
   computed: {
     page() {
-      return this.$route.params.page ? this.$route.params.page : "installation";
+      return this.$route.params.page;
     },
     content() {
       return {

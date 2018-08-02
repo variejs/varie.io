@@ -8,8 +8,10 @@ import RouterInterface from "varie/lib/routing/RouterInterface";
 |
 */
 
-// $router.route("/", "Home");
-$router.redirect("/", "docs");
+let docsHomePage = "/docs/latest/what-is-varie";
+$router.redirect("/", docsHomePage);
+$router.redirect("/docs", docsHomePage);
+$router.redirect("/docs/latest", docsHomePage);
 $router
   .prefix("/docs")
   .area("areas/Documentation")

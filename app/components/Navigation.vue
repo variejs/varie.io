@@ -9,7 +9,7 @@
             <input id="search" type="text" placeholder="Search" name="search">
         </div>
         <div v-show="docsPage === false">
-            <router-link :to="{ name : 'docs', params : { version : versions[0], page : 'installation' } }">
+            <router-link :to="{ name : 'docs', params : { version : versions[0], page : 'what-is-varie' } }">
                 Documentation
             </router-link>
         </div>
