@@ -1,7 +1,7 @@
 .dropdown {
   position: relative;
   text-transform: capitalize;
-  flex : 1 0 auto;
+  flex: 1 0 auto;
   justify-content: center;
   align-items: center;
 
@@ -22,22 +22,22 @@
     top: calc(100% + 4px);
     left: -1px;
     right: -1px;
-    background-color : $white;
-    border : 1px solid $gray;
+    background-color: $white;
+    border: 1px solid $gray;
 
     &-item {
-      display : block;
-      padding : 2rem 0;
+      display: block;
+      padding: 2rem 0;
       text-align: center;
 
       &:not(:last-child) {
-        border : 1px solid $teal;
+        border: 1px solid $teal;
       }
 
       &:hover {
-        color : $white;
+        color: $white;
         cursor: pointer;
-        background-color : $teal;
+        background-color: $teal;
       }
 
       &:first-child {
