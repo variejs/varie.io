@@ -11,16 +11,32 @@
   }
 
   &--content {
-    overflow: scroll;
+    overflow-y: scroll;
     padding-left: 1rem;
+    max-width: 100%;
+
+    h1,
+    h2 {
+      font-weight: 100;
+    }
+
+    h3,
+    h4,
+    h5,
+    h6{
+      font-weight: 600;
+    }
 
     h1,
     h2 {
       &:not(:first-child) {
         display : block;
-        padding : .5rem;
+        padding : .5rem 0;
         margin-top : 2rem;
-        border: 1px dashed $gray;
+        &:before {
+          color : $teal;
+          content : "# ";
+        }
       }
     }
 
@@ -38,11 +54,36 @@
       li {
         margin : .25rem 0;
         a {
+          opacity: .8;
           color : $teal;
-          font-weight : 800;
+          font-weight : 600;
           &:before {
             content : "# "
           }
+          &:hover {
+            opacity: 1;
+            font-weight: 800;
+          }
+        }
+
+        ul {
+          li {
+            margin-left : 2rem;
+            a {
+              opacity: .6;
+            }
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+
+    ul {
+      li {
+        p {
+          margin-bottom : .5rem;
         }
       }
     }
@@ -51,7 +92,6 @@
     h4,
     h5,
     h6 {
-      font-weight: 600;
       margin-top : 1rem;
     }
 
@@ -60,12 +100,47 @@
     }
 
     code {
+      max-width: 100%;
       display : inline-block;
       border-radius: .1rem;
       padding: .25rem;
       margin: 0 .25rem;
       background-color : $gray;
       vertical-align: text-top;
+    }
+
+    .alert {
+      padding : 1.5rem;
+      color : $white;
+      border-radius: .25rem;
+      background-color : $red;
+      a {
+        color : $white;
+        text-decoration: underline;
+      }
+      &:before {
+        content : "\f321";
+        font-size : 1.5rem;
+        margin-right : 1rem;
+        font-family: "Font Awesome 5 Pro";
+      }
+    }
+
+    .info {
+      padding : 1.5rem;
+      color : $white;
+      border-radius: .25rem;
+      background-color : lighten($teal, 10%);
+      a {
+        color : $white;
+        text-decoration: underline;
+      }
+      &:before {
+        content : "\f30f";
+        font-size : 1.5rem;
+        margin-right : 1rem;
+        font-family: "Font Awesome 5 Pro";
+      }
     }
   }
 
