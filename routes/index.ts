@@ -8,8 +8,8 @@ import RouterInterface from "varie/lib/routing/RouterInterface";
 |
 */
 
-$router.route("/", "Home");
-
+// $router.route("/", "Home");
+$router.redirect('/', 'docs');
 $router
   .prefix("/docs")
   .area("areas/Documentation")
