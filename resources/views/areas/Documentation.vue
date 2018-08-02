@@ -20,6 +20,16 @@ export default Vue.extend({
       inputSelector: "#search",
       debug: false,
     });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "/") {
+        document.getElementById("search").focus();
+        e.preventDefault();
+      }
+    });
+  },
+  beforeDestroy() {
+    document.removeEventListener("keydown");
   },
   computed: {
     version() {
