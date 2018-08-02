@@ -28,9 +28,12 @@
       }
     }
 
-    a:hover {
-      border : 1px solid $gray;
+    a {
+     &:hover {
+       border : 1px solid $gray;
+     }
     }
+
   }
 
   .algolia-autocomplete {
@@ -49,5 +52,6 @@
   .nav-dropdown {
     display: flex;
     max-width : 250px; // janice will tell me to fix this with basis
+    user-select: none;
   }
 }

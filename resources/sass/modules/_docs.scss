@@ -5,13 +5,12 @@
   justify-content: center;
 
   &--body {
-    overflow: scroll;
+    overflow: auto;
     padding : 1rem 2rem;
     flex : 0 1 800px;
   }
 
   &--content {
-    overflow-y: scroll;
     padding-left: 1rem;
     max-width: 100%;
 
@@ -110,6 +109,8 @@
     }
 
     .alert {
+      display: flex;
+      align-items: center;
       padding : 1.5rem;
       color : $white;
       border-radius: .25rem;
@@ -119,10 +120,10 @@
         text-decoration: underline;
       }
       &:before {
+        @extend .fal;
         content : "\f321";
-        font-size : 1.5rem;
-        margin-right : 1rem;
-        font-family: "Font Awesome 5 Pro";
+        font-size: 1.7rem;
+        margin: -11px 15px -11px 0px;
       }
     }
 
@@ -134,26 +135,28 @@
       a {
         color : $white;
         text-decoration: underline;
+
+
       }
+
       &:before {
+        @extend .fal;
         content : "\f30f";
-        font-size : 1.5rem;
-        margin-right : 1rem;
-        font-family: "Font Awesome 5 Pro";
+        font-size: 1.7rem;
+        margin: -11px 15px -11px 0px;
       }
     }
   }
 
   &--menu {
     overflow: auto;
-    padding : .5rem 1rem 0 0;
     border-right : 1px solid $gray;
 
     > ul > li {
       margin-bottom : 1rem;
 
-      h4 {
-        padding : 1rem .5rem;
+      h3 {
+        padding : 1rem;
       }
       ul a {
         display : block;
@@ -167,7 +170,7 @@
         }
 
         &.router-link-active {
-          border-color : $teal;
+          border-right : 5px solid $teal;
         }
       }
     }
