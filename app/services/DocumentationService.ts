@@ -56,13 +56,13 @@ export default class DocumentationService
   }
 
   renderCustomClasses(html) {
-      return html.replace(/\[{\.(.*)}(.*)\]/g, '<div class="$1">$2</div>');
+    return html.replace(/\[{\.(.*)}(.*)\]/g, '<div class="$1">$2</div>');
   }
 
   removeVueRenderings(html) {
-      return html
-          .replace(/{{/g, "<span>&#123;&#123;</span>")
-          .replace(/}}/g, "<span>&#125;&#125;</span>");
+    return html
+      .replace(/{{/g, "<span>&#123;&#123;</span>")
+      .replace(/}}/g, "<span>&#125;&#125;</span>");
   }
 
   page(version: string, page: string) {

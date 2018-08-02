@@ -62,8 +62,8 @@ export default {
         documentArea.scrollTop = element.offsetTop;
       }
     } else {
-      if(documentArea) {
-          documentArea.scrollTop = 0;
+      if (documentArea) {
+        documentArea.scrollTop = 0;
       }
       return { x: 0, y: 0 };
     }
