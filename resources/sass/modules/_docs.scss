@@ -150,6 +150,7 @@
 
   &--menu {
     overflow: auto;
+    min-width: 275px;
     border-right : 1px solid $gray;
 
     > ul > li {
