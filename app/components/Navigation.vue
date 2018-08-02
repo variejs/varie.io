@@ -5,15 +5,15 @@
                 <img src="./../../resources/assets/img/varie.png">
             </router-link>
         </div>
-        <div class="flex flex-grow">
+        <div v-show="docsPage">
             <input id="search" type="text" placeholder="Search" name="search">
         </div>
-        <!--<div>-->
-            <!--<router-link :to="{ name : 'docs', params : { version : versions[0], page : 'installation' } }">-->
-                <!--Documentation-->
-            <!--</router-link>-->
-        <!--</div>-->
-        <div class="nav-dropdown" @click="showVersionDropDown = !showVersionDropDown" v-if="docsPage">
+        <div v-show="docsPage === false">
+            <router-link :to="{ name : 'docs', params : { version : versions[0], page : 'installation' } }">
+                Documentation
+            </router-link>
+        </div>
+        <div class="nav-dropdown" @click="showVersionDropDown = !showVersionDropDown" v-show="docsPage">
             <div class="dropdown" :class="{ open : showVersionDropDown }">
                 {{ currentVersion }} &nbsp;
                 <i class="arrow"></i>

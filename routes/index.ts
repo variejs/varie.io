@@ -8,7 +8,7 @@ import RouterInterface from "varie/lib/routing/RouterInterface";
 |
 */
 
-$router.redirect("/", "/docs");
+$router.route("/", "Home");
 
 $router
   .prefix("/docs")
