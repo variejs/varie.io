@@ -49,6 +49,11 @@
       }
     }
 
+    li:not(.has-link) {
+      list-style: circle;
+      margin-left: 1rem;
+    }
+
     ul {
       li {
         margin: 0.25rem 0;
