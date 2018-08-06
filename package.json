@@ -14,7 +14,8 @@
     "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "@sentry/webpack-plugin": "^1.5.2",
     "markdown-loader": "^3.0.0",
-    "varie-bundler": "^0.1.0"
+    "varie-bundler": "^0.1.1"
   }
 }
