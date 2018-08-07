@@ -14,6 +14,14 @@ module.exports = function(env, argv) {
         .end()
         .use("markdown")
         .loader("markdown-loader");
+
+      config.when(argv.mode === "production", (config) => {
+        config.plugin("sentry").use(SentryCliPlugin, [
+          {
+            include: [path.join(__dirname, "public")],
+          },
+        ]);
+      });
     })
     .aliases({
       "@app": path.join(__dirname, "app"),
@@ -24,13 +32,6 @@ module.exports = function(env, argv) {
       "@resources": path.join(__dirname, "resources"),
       "@views": path.join(__dirname, "resources/views"),
       "@components": path.join(__dirname, "app/components"),
-    })
-    .when(argv.mode === "production", (bundler) => {
-      bundler.addPlugin(
-        new SentryCliPlugin({
-          include: [path.join(__dirname, "public")],
-        }),
-      );
     })
     .build();
 };
