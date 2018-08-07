@@ -4,16 +4,15 @@ const VarieBundler = require("varie-bundler");
 module.exports = function(env, argv) {
   return new VarieBundler(argv, __dirname)
     .entry("app", ["app/app.ts", "resources/sass/app.scss"])
-    .addLoader({
-      test: /\.md$/,
-      use: [
-        {
-          loader: "html-loader",
-        },
-        {
-          loader: "markdown-loader",
-        },
-      ],
+    .chainWebpack((config) => {
+      config.module
+        .rule("markdown")
+        .test(/\.md$/)
+        .use("html")
+        .loader("html-loader")
+        .end()
+        .use("markdown")
+        .loader("markdown-loader");
     })
     .aliases({
       "@app": path.join(__dirname, "app"),

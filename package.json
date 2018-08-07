@@ -8,13 +8,14 @@
   "dependencies": {
     "docsearch.js": "^2.5.2",
     "prismjs": "^1.15.0",
-    "varie": "0.0.54",
+    "varie": "0.1.7",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
     "markdown-loader": "^3.0.0",
-    "varie-bundler": "^0.0.7"
+    "varie-bundler": "^0.2.3",
+    "vue-template-compiler": "^2.5.17"
   }
 }
