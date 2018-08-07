@@ -51,6 +51,7 @@ export default class DocumentationService
             hash : "#$1"
           }'`.replace(/\r?\n|\r/g, ""),
       )
+      .replace(/<li>(<a.*)<\/li>/g, '<li class="has-link">$1</li>')
       .replace(/<a (:to.*)>(.*)<.*\/a>/g, "<router-link $1>$2</router-link>")
       .replace(/%7B%7Bversion%7D%7D/g, version);
   }

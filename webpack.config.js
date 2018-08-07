@@ -1,5 +1,6 @@
 const path = require("path");
 const VarieBundler = require("varie-bundler");
+const SentryCliPlugin = require("@sentry/webpack-plugin");
 
 module.exports = function(env, argv) {
   return new VarieBundler(argv, __dirname)
@@ -23,6 +24,13 @@ module.exports = function(env, argv) {
       "@resources": path.join(__dirname, "resources"),
       "@views": path.join(__dirname, "resources/views"),
       "@components": path.join(__dirname, "app/components"),
+    })
+    .when(argv.mode === "production", (bundler) => {
+      bundler.addPlugin(
+        new SentryCliPlugin({
+          include: [path.join(__dirname, "public")],
+        }),
+      );
     })
     .build();
 };
