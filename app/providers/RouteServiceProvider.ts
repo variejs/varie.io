@@ -9,9 +9,9 @@ import VueRouterService from "varie/lib/routing/VueRouterService";
 |
 */
 export default class RoutingServiceProvider extends ServiceProvider {
-    public $router: VueRouterService;
+  public $router: VueRouterService;
 
-    map() {
-        this.$router.register(Routes);
-    }
+  map() {
+    this.$router.register(Routes);
+  }
 }

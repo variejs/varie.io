@@ -8,9 +8,9 @@ import StateServiceInterface from "varie/lib/state/StateServiceInterface";
 |
 */
 export default class StoreServiceProvider extends ServiceProvider {
-    public $store: StateServiceInterface;
+  public $store: StateServiceInterface;
 
-    map() {
-        // this.$store.registerStore(...);
-    }
+  map() {
+    // this.$store.registerStore(...);
+  }
 }
