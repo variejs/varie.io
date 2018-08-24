@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "markdown-loader": "^3.0.0",
-    "varie-bundler": "^0.2.3",
+    "varie-bundler": "^0.2.9",
     "vue-template-compiler": "^2.5.17"
   }
 }
