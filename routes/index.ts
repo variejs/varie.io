@@ -5,6 +5,10 @@
 |
 */
 
+import ErrorViews from "@views/errors";
+import Docs from "@views/Docs.vue";
+import DocumentationArea from "@views/DocumentationArea.vue";
+
 export default function($router) {
   let docsHomePage = "/docs/latest/what-is-varie";
   $router.redirect("/", docsHomePage);
@@ -12,10 +16,10 @@ export default function($router) {
   $router.redirect("/docs/latest", docsHomePage);
   $router
     .prefix("/docs")
-    .area("areas/Documentation")
+    .area(DocumentationArea)
     .group(() => {
-      $router.route(":version?/:page?", "Docs").setName("docs");
+      $router.route(":version?/:page?", Docs).setName("docs");
     });
 
-  $router.route("*", "errors/404");
+  $router.route("*", ErrorViews.Error404);
 }

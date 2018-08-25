@@ -9,7 +9,7 @@
     "@sentry/webpack-plugin": "^1.5.2",
     "docsearch.js": "^2.5.2",
     "prismjs": "^1.15.0",
-    "varie": "0.3.0",
+    "varie": "^0.3.4",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
