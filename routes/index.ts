@@ -5,8 +5,8 @@
 |
 */
 
-import ErrorViews from "@views/errors";
 import Docs from "@views/Docs.vue";
+import ErrorViews from "@views/errors";
 import DocumentationArea from "@views/DocumentationArea.vue";
 
 export default function($router) {
