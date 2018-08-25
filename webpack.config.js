@@ -1,6 +1,6 @@
 const path = require("path");
 const VarieBundler = require("varie-bundler");
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const SentryCliPlugin = require("@sentry/webpack-plugin");
 module.exports = function(env, argv) {
   return new VarieBundler(argv, __dirname)
@@ -23,12 +23,14 @@ module.exports = function(env, argv) {
         ]);
       });
 
-      config.plugin('copy').use(CopyWebpackPlugin, [[
+      config.plugin("copy").use(CopyWebpackPlugin, [
+        [
           {
-            to : path.join(__dirname, "public/img"),
-            from : path.join(__dirname, "resources/assets/img/varie-banner.png"),
-          }
-      ]]);
+            to: path.join(__dirname, "public/img"),
+            from: path.join(__dirname, "resources/assets/img/varie-banner.png"),
+          },
+        ],
+      ]);
     })
     .aliases({
       "@app": path.join(__dirname, "app"),

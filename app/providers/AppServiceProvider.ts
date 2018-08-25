@@ -1,7 +1,4 @@
-import Vue from 'vue';
-import VueHead from 'vue-head';
 import ServiceProvider from "varie/lib/support/ServiceProvider";
-
 
 /*
 |--------------------------------------------------------------------------
@@ -12,9 +9,7 @@ import ServiceProvider from "varie/lib/support/ServiceProvider";
 |
 */
 export default class AppProvider extends ServiceProvider {
-  public boot() {
-    Vue.use(VueHead)
-  }
+  public boot() {}
 
   public register() {}
 }

@@ -26,14 +26,14 @@ export default Vue.extend({
   beforeDestroy() {
     document.removeEventListener("keydown", this.keyDownSearch);
   },
-    methods : {
-        keyDownSearch(e) {
-            if (e.key === "/") {
-                document.getElementById("search").focus();
-                e.preventDefault();
-            }
-        }
+  methods: {
+    keyDownSearch(e) {
+      if (e.key === "/") {
+        document.getElementById("search").focus();
+        e.preventDefault();
+      }
     },
+  },
   computed: {
     version() {
       return this.$route.params.version ? this.$route.params.version : "latest";
