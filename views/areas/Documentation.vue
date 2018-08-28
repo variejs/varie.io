@@ -21,15 +21,18 @@ export default Vue.extend({
       debug: false,
     });
 
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "/") {
-        document.getElementById("search").focus();
-        e.preventDefault();
-      }
-    });
+    document.addEventListener("keydown", this.quickSearch);
   },
   beforeDestroy() {
-    document.removeEventListener("keydown");
+    document.removeEventListener("keydown", this.quickSearch);
+  },
+  methods:  {
+    quickSearch(e) {
+        if (e.key === "/") {
+          document.getElementById("search").focus();
+          e.preventDefault();
+        }
+    }
   },
   computed: {
     version() {

@@ -2,7 +2,7 @@
     <nav class="navigation">
         <div>
             <router-link to="/" tag="span" class="cursor-pointer logo">
-                <img src="./../../resources/assets/img/varie.png">
+                <img src="./../../../resources/assets/img/varie.png">
             </router-link>
         </div>
         <div v-show="docsPage">
@@ -13,17 +13,20 @@
                 Documentation
             </router-link>
         </div>
-        <div class="nav-dropdown" @click="showVersionDropDown = !showVersionDropDown" v-show="docsPage">
-            <div class="dropdown" :class="{ open : showVersionDropDown }">
-                {{ currentVersion }} &nbsp;
-                <i class="arrow"></i>
-                <div class="dropdown--menu" v-show="showVersionDropDown">
-                    <template v-for="version in versions">
-                        <div @click="selectVersion(version)" class="dropdown--menu-item">{{ version }}</div>
-                    </template>
-                </div>
-            </div>
+        <div class="nav-button">
+            <a href="https://github.com/variejs/varie" class="fa fa-github fa-3x"></a>
         </div>
+        <!--<div class="nav-dropdown" @click="showVersionDropDown = !showVersionDropDown" v-show="docsPage">-->
+            <!--<div class="dropdown" :class="{ open : showVersionDropDown }">-->
+                <!--{{ currentVersion }} &nbsp;-->
+                <!--<i class="arrow"></i>-->
+                <!--<div class="dropdown&#45;&#45;menu" v-show="showVersionDropDown">-->
+                    <!--<template v-for="version in versions">-->
+                        <!--<div @click="selectVersion(version)" class="dropdown&#45;&#45;menu-item">{{ version }}</div>-->
+                    <!--</template>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
     </nav>
 </template>
 

@@ -23,7 +23,6 @@
       &:not(.algolia-autocomplete) {
         display: flex;
         flex: 1 0 auto;
-        padding: 2rem 0;
         border-bottom: 1px solid transparent;
       }
     }
@@ -52,5 +51,17 @@
     display: flex;
     max-width: 250px; // janice will tell me to fix this with basis
     user-select: none;
+  }
+
+  .nav-button {
+    a {
+      align-items: center;
+      justify-content: center;
+      border-bottom: 2px solid transparent;
+      &:hover {
+        border : none;
+        border-bottom: 2px solid $teal;
+      }
+    }
   }
 }
