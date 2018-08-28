@@ -8,7 +8,7 @@ export default class DocumentationService
   implements DocumentationServiceInterface {
   public $router: VueRouter;
 
-  constructor(@inject("$router") router: RouterInterface) {
+  constructor(@inject("routerService") router: RouterInterface) {
     this.$router = router.getRouter();
   }
 

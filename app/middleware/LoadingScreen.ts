@@ -1,9 +1,15 @@
-export default class Loading {
+import { injectable } from "inversify";
+import { AxiosResponse, AxiosRequestConfig, AxiosError } from "axios";
+import AxiosHttpMiddlewareInterface from "varie/lib/http/AxiosHttpMiddlewareInterface";
+
+@injectable()
+export default class Loading implements AxiosHttpMiddlewareInterface {
   private timeoutSet = false;
   private spinnerTimeout = null;
   private requestsCounter = 0;
+  private spinnerId = "app-spinner";
 
-  public request(config: object) {
+  public request(config: AxiosRequestConfig) {
     if (this.timeoutSet === false) {
       this.spinnerTimeout = setTimeout(() => {
         this._turnOnSpinner();
@@ -16,7 +22,7 @@ export default class Loading {
     return config;
   }
 
-  public response(response: object) {
+  public response(response: AxiosResponse) {
     if (--this.requestsCounter === 0) {
       this._turnOffSpinner();
     }
@@ -24,7 +30,7 @@ export default class Loading {
     return response;
   }
 
-  public responseError(error) {
+  public responseError(error: AxiosError) {
     if (--this.requestsCounter === 0) {
       this._turnOffSpinner();
     }
@@ -36,7 +42,7 @@ export default class Loading {
 
     if (!spinnerElement) {
       let spinner = document.createElement("div");
-      spinner.id = "app-spinner";
+      spinner.id = this.spinnerId;
       spinner.classList.add("sk-container");
 
       let cube = document.createElement("div");
@@ -54,7 +60,7 @@ export default class Loading {
   }
 
   private _getSpinnerElement() {
-    return document.getElementById("spinner");
+    return document.getElementById(this.spinnerId);
   }
   private _turnOffSpinner() {
     clearTimeout(this.spinnerTimeout);

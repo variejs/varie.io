@@ -25,12 +25,12 @@ module.exports = function(env, argv) {
     })
     .aliases({
       "@app": path.join(__dirname, "app"),
+      "@views": path.join(__dirname, "views"),
+      "@store": path.join(__dirname, "store"),
       "@routes": path.join(__dirname, "routes"),
       "@config": path.join(__dirname, "config"),
-      "@store": path.join(__dirname, "app/store"),
       "@models": path.join(__dirname, "app/models"),
       "@resources": path.join(__dirname, "resources"),
-      "@views": path.join(__dirname, "resources/views"),
       "@components": path.join(__dirname, "app/components"),
     })
     .build();
