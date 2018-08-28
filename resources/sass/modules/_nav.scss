@@ -54,12 +54,13 @@
   }
 
   .nav-button {
+    flex: 0 0 120px;
     a {
       align-items: center;
       justify-content: center;
       border-bottom: 2px solid transparent;
       &:hover {
-        border : none;
+        border: none;
         border-bottom: 2px solid $teal;
       }
     }

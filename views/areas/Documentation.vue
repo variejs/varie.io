@@ -26,13 +26,13 @@ export default Vue.extend({
   beforeDestroy() {
     document.removeEventListener("keydown", this.quickSearch);
   },
-  methods:  {
+  methods: {
     quickSearch(e) {
-        if (e.key === "/") {
-          document.getElementById("search").focus();
-          e.preventDefault();
-        }
-    }
+      if (e.key === "/") {
+        document.getElementById("search").focus();
+        e.preventDefault();
+      }
+    },
   },
   computed: {
     version() {

@@ -14,7 +14,7 @@
             </router-link>
         </div>
         <div class="nav-button">
-            <a href="https://github.com/variejs/varie" class="fa fa-github fa-3x"></a>
+            <a href="https://github.com/variejs/varie" class="fab fa-github fa-2x"></a>
         </div>
         <!--<div class="nav-dropdown" @click="showVersionDropDown = !showVersionDropDown" v-show="docsPage">-->
             <!--<div class="dropdown" :class="{ open : showVersionDropDown }">-->
