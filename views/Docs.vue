@@ -1,6 +1,6 @@
 <template>
-   <div id="doc-area" class="documentation--body">
-      <component class="documentation--content" :is="content" v-if="content && content.template"></component>
+   <div id="doc-area" class="documentation__body">
+      <component class="documentation__content" :is="content" v-if="content && content.template"></component>
       <not-found v-if="!content"></not-found>
    </div>
 </template>

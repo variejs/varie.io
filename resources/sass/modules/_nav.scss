@@ -3,6 +3,30 @@
   flex-shrink: 0;
   border-top: 5px solid $teal;
   border-bottom: 1px solid $gray;
+  position: sticky;
+  top: 0;
+  background-color: $white;
+  z-index: 900;
+  justify-content: flex-end;
+
+  &__logo {
+    @include breakpoint(md) {
+      display: none !important;
+    }
+  }
+
+  &__mobile {
+    display: none !important;
+    @include breakpoint(md) {
+      display: inline-block !important;
+    }
+  }
+
+  &__search {
+    @include breakpoint(md) {
+      display: none !important;
+    }
+  }
 
   > div:first-child {
     max-width: 274px;
@@ -54,14 +78,20 @@
   }
 
   .nav-button {
+    padding: 1rem 1.75rem 0.75rem;
     flex: 0 0 120px;
-    a {
+    a,
+    span {
       align-items: center;
       justify-content: center;
       border-bottom: 2px solid transparent;
       &:hover {
         border: none;
         border-bottom: 2px solid $teal;
+      }
+
+      @include breakpoint(sm) {
+        border-bottom-color: transparent !important;
       }
     }
   }

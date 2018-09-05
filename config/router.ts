@@ -54,17 +54,17 @@ export default {
   |
   */
 
-  scrollBehavior: (to, from, savedPosition) => {
-    let documentArea = document.getElementById("doc-area");
-    if (to.hash) {
-      let element = document.getElementById(to.hash.replace("#", ""));
-      if (element) {
-        documentArea.scrollTop = element.offsetTop;
+  scrollBehavior: (to, from, saved) => {
+    if (saved) {
+      return saved;
+    } else if (to.hash) {
+      if (to.params.replaced) {
+        return false;
       }
+      return {
+        selector: to.hash,
+      };
     } else {
-      if (documentArea) {
-        documentArea.scrollTop = 0;
-      }
       return { x: 0, y: 0 };
     }
   },

@@ -28,19 +28,40 @@ export default class DocumentationService
 
   menu(version) {
     try {
-      return require(`@resources/docs/${version}/menu.md`)
+      let menuTemplate = require(`@resources/docs/${version}/menu.md`)
         .replace(/<a/g, "<router-link")
         .replace(/a>/g, "router-link>")
         .replace(/href/g, "to")
         .replace(/%7B%7Bversion%7D%7D/g, version);
+
+      // ADDING MOBILE MENU
+      return `<div><ul><li><input id="menu-search" type="text" placeholder="Search" name="search"></li></ul>${menuTemplate}</div>`;
     } catch (err) {
       this.$router.push("/404");
     }
   }
 
-  renderRouterLinks(html, version) {
+  page(version: string, page: string) {
+    try {
+      let markdownPage = require(`@resources/docs/${version}/${page}.md`).replace();
+
+      markdownPage = this._renderRouterLinks(markdownPage, version);
+      markdownPage = this._renderCustomClasses(markdownPage);
+      markdownPage = this._removeVueRenderings(markdownPage);
+
+      markdownPage = `<div>${markdownPage}</div>`;
+
+      return markdownPage;
+    } catch (err) {
+      return false;
+    }
+  }
+
+  private _renderRouterLinks(html, version) {
     let routeName = this.$router.currentRoute.name;
-    let routeParams = this.$router.currentRoute.params;
+    let routeParams = Object.assign({}, this.$router.currentRoute.params, {
+      replaced: false,
+    });
 
     return html
       .replace(
@@ -56,29 +77,13 @@ export default class DocumentationService
       .replace(/%7B%7Bversion%7D%7D/g, version);
   }
 
-  renderCustomClasses(html) {
+  private _renderCustomClasses(html) {
     return html.replace(/\[{\.(.*)}(.*)\]/g, '<div class="$1">$2</div>');
   }
 
-  removeVueRenderings(html) {
+  private _removeVueRenderings(html) {
     return html
       .replace(/{{/g, "<span>&#123;&#123;</span>")
       .replace(/}}/g, "<span>&#125;&#125;</span>");
-  }
-
-  page(version: string, page: string) {
-    try {
-      let markdownPage = require(`@resources/docs/${version}/${page}.md`).replace();
-
-      markdownPage = this.renderRouterLinks(markdownPage, version);
-      markdownPage = this.renderCustomClasses(markdownPage);
-      markdownPage = this.removeVueRenderings(markdownPage);
-
-      markdownPage = `<div>${markdownPage}</div>`;
-
-      return markdownPage;
-    } catch (err) {
-      return false;
-    }
   }
 }

@@ -7,4 +7,6 @@
 |
 */
 
-export default [];
+import CloseMobileMenu from "@routes/middleware/CloseMobileMenu";
+
+export default [CloseMobileMenu];

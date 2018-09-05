@@ -1,18 +1,20 @@
 .documentation {
   display: flex;
-  flex: 1 1 auto;
+  flex: 1 0 auto;
   overflow: hidden;
   justify-content: center;
 
-  &--body {
-    overflow: auto;
+  &__body {
+    max-width: 100%;
     padding: 1rem 2rem;
-    flex: 0 1 800px;
+    @include breakpoint(sm) {
+      padding: 1rem 0.25rem;
+    }
   }
 
-  &--content {
+  &__content {
     padding-left: 1rem;
-    max-width: 100%;
+    max-width: 800px;
 
     h1,
     h2 {
@@ -151,8 +153,7 @@
     }
   }
 
-  &--menu {
-    overflow: auto;
+  &__menu {
     min-width: 275px;
     border-right: 1px solid $gray;
 
@@ -176,6 +177,29 @@
         &.router-link-active {
           border-right: 5px solid $teal;
         }
+      }
+    }
+
+    #menu-search {
+      display: none;
+    }
+
+    // MOBILE MENU
+    @include breakpoint(sm) {
+      width: 275px;
+      position: fixed;
+      top: 4rem;
+      bottom: 0;
+      left: -275px;
+      transition: ease all 0.3s;
+      background-color: $white;
+      z-index: 99;
+      &--open {
+        left: 0;
+        transition: ease all 0.3s;
+      }
+      #menu-search {
+        display: initial;
       }
     }
   }
