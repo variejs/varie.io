@@ -32,8 +32,8 @@
     h2 {
       &:not(:first-child) {
         display: block;
-        padding: 0.5rem 0;
-        margin-top: 2rem;
+        padding: 5.5rem 0 .5rem 0; // THIS IS HACK TO GET HASHES WORKING CORRECTLY
+        margin-top: -3rem;
         &:before {
           color: $teal;
           content: "# ";
