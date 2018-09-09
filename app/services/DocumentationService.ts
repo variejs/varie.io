@@ -34,8 +34,8 @@ export default class DocumentationService
         .replace(/href/g, "to")
         .replace(/%7B%7Bversion%7D%7D/g, version);
 
-      // ADDING MOBILE MENU
-      return `<div><ul><li><input id="menu-search" type="text" placeholder="Search" name="search"></li></ul>${menuTemplate}</div>`;
+      // ADDING MOBILE SEARCH TO MENU
+      return `<div><ul class="search-area"><li><input id="menu-search" type="text" placeholder="Search" name="search"></li></ul>${menuTemplate}</div>`;
     } catch (err) {
       this.$router.push("/404");
     }

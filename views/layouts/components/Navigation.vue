@@ -16,7 +16,7 @@
         <div class="nav-button">
             <a href="https://github.com/variejs/varie" class="fab fa-github fa-2x"></a>
         </div>
-        <div class="navigation__mobile nav-button" @click="toggleMenu">
+        <div class="navigation__mobile nav-button" :class="{ active : isMenuOpen }" @click="toggleMenu">
             <span>
                 <i class="fal fa-bars fa-2x"></i>
             </span>
