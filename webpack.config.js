@@ -15,13 +15,10 @@ module.exports = function(env, argv) {
         .use("markdown")
         .loader("markdown-loader");
 
-      config.when(argv.mode === "production", (config) => {
-        config.plugin("sentry").use(SentryCliPlugin, [
-          {
-            include: [path.join(__dirname, "public")],
-          },
-        ]);
-      });
+
+
+
+
 
       config.plugin("copy").use(CopyWebpackPlugin, [
         [
