@@ -4,6 +4,7 @@
 
 code {
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 input:focus,

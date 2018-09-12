@@ -161,6 +161,7 @@
     min-width: 275px;
     overflow-y: auto;
     border-right: 1px solid $gray;
+    -webkit-overflow-scrolling: touch;
 
     > ul > li {
       margin-bottom: 1rem;
