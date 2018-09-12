@@ -81,8 +81,18 @@
   }
 
   .nav-button {
-    padding: 1rem 1.75rem 0.75rem;
     flex: 0 0 120px;
+
+    @include breakpoint(md) {
+      padding: 1rem 1.75rem 0.75rem;
+    }
+
+    a {
+      &:hover {
+        border: none !important;
+      }
+    }
+
     a,
     span {
       align-items: center;
