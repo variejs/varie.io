@@ -1,14 +1,12 @@
 import { inject, injectable } from "inversify";
 import { VueRouter } from "vue-router/types/router";
 import RouterInterface from "varie/lib/routing/RouterInterface";
-import { DocumentationServiceInterface } from "@app/contracts/DocumentationServiceInterface";
 
 @injectable()
-export default class DocumentationService
-  implements DocumentationServiceInterface {
+export default class DocumentationService {
   public $router: VueRouter;
 
-  constructor(@inject("routerService") router: RouterInterface) {
+  constructor(@inject("RouterService") router: RouterInterface) {
     this.$router = router.getRouter();
   }
 

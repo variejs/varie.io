@@ -11,7 +11,7 @@ import DocumentationService from "@app/services/DocumentationService";
 |
 */
 @injectable()
-export default class DocumentationProvider extends ServiceProvider {
+export default class DocumentationServiceProvider extends ServiceProvider {
   public register() {
     this.app.singleton("$documentationService", DocumentationService);
   }

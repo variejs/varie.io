@@ -1,7 +1,6 @@
+import MenuStore from "@store/menu/MenuStore";
 import ServiceProvider from "varie/lib/state/ServiceProvider";
 import StateServiceInterface from "varie/lib/state/StateServiceInterface";
-
-import MenuStore from "@store/menu/MenuStore";
 
 /*
 |--------------------------------------------------------------------------

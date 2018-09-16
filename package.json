@@ -2,23 +2,23 @@
   "private": true,
   "scripts": {
     "dev": "webpack --mode development --progress --hide-modules",
-    "watch": "webpack-dev-server --mode development --hot",
+    "watch": "webpack-dev-server --mode development --progress --hot",
     "prod": "webpack --mode production --no-progress --hide-modules"
   },
   "dependencies": {
-    "@sentry/webpack-plugin": "^1.5.2",
+    "@sentry/webpack-plugin": "^1.6.1",
     "copy-webpack-plugin": "^4.5.2",
     "docsearch.js": "^2.5.2",
     "lodash.throttle": "^4.1.1",
+    "markdown-loader": "^4.0.0",
     "prismjs": "^1.15.0",
-    "varie": "0.3.10",
+    "varie": "^0.4.1",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
-    "markdown-loader": "^4.0.0",
-    "varie-bundler": "^0.3.3",
+    "varie-bundler": "^0.3.6",
     "vue-template-compiler": "^2.5.17"
   }
 }

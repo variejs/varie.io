@@ -3,10 +3,10 @@ import AppServiceProvider from "@app/providers/AppServiceProvider";
 import ConfigServiceProvider from "varie/lib/config/ServiceProvider";
 import StoreServiceProvider from "@app/providers/StoreServiceProvider";
 import RoutingServiceProvider from "@app/providers/RouteServiceProvider";
-import DocumentationProvider from "@app/providers/DocumentationProvider";
 import FormsServiceProvider from "varie/lib/plugins/forms/ServiceProvider";
 import ValidationServiceProvider from "varie/lib/validation/ServiceProvider";
 import NotificationsProvider from "varie/lib/plugins/notifications/ServiceProvider";
+import DocumentationServiceProvider from "@app/providers/DocumentationServiceProvider";
 import AutoRegisterMixinsServiceProvider from "varie/lib/plugins/autoRegisterMixins/ServiceProvider";
 import AutoRegisterFiltersServiceProvider from "varie/lib/plugins/autoRegisterFilters/ServiceProvider";
 import AutoRegisterLayoutsServiceProvider from "varie/lib/plugins/autoRegisterLayouts/ServiceProvider";
@@ -61,8 +61,8 @@ export default {
   */
   providers: {
     /*
-    * Framework Service Providers...
-    */
+     * Framework Service Providers...
+     */
     ConfigServiceProvider,
     StoreServiceProvider,
     RoutingServiceProvider,
@@ -80,6 +80,6 @@ export default {
      */
     AppServiceProvider,
     NotificationsProvider,
-    DocumentationProvider,
+    DocumentationServiceProvider,
   },
 };

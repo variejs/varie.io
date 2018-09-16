@@ -1,8 +1,7 @@
 import RouterInterface from "varie/lib/routing/RouterInterface";
 
-import ErrorViews from "@views/errors";
-
 import Docs from "@views/Docs.vue";
+import ErrorViews from "@views/errors";
 import DocumentationArea from "@views/DocumentationArea.vue";
 
 export default function($router: RouterInterface) {
@@ -22,7 +21,7 @@ export default function($router: RouterInterface) {
   $router
     .prefix("/docs")
     .area(DocumentationArea)
-    .middleware("CloseMobileMenu")
+    .middleware(["CloseMobileMenu"])
     .group(() => {
       $router.route(":version?/:page?", Docs).setName("docs");
     });
