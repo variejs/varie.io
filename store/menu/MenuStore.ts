@@ -9,6 +9,6 @@ export default class MenuStore extends StoreModule {
     super();
     this.setName("menu")
       .addState(state)
-      .addMutations(mutations)
+      .addMutations(mutations);
   }
 }

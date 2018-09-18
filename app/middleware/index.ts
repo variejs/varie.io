@@ -1,3 +1,3 @@
 import LoadingScreen from "./LoadingScreen";
 
-export default [];
+export default [LoadingScreen];
