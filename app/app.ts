@@ -15,13 +15,15 @@ import StateServiceInterface from "varie/lib/state/StateServiceInterface";
 
 application.boot().then((app) => {
 
-  if($config.get('env.ENV') === 'production') {
+  if($config.get('app.env') === 'production') {
     Raven
       .config('https://e4a9bb84172c4b8bbed481291a6f3423@sentry.codepier.io/8')
       .addPlugin(RavenVue)
       .install();
   }
 
+  
+  console.info($config);
   new Vue({
     render: (h) => h(BaseLayout),
     router: app.make<RouterInterface>("RouterService").getRouter(),
