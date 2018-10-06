@@ -40,7 +40,7 @@
 
 <script>
 export default {
-  $inject: ["$documentationService"],
+  $inject: ["DocumentationService"],
   data() {
     return {
       showVersionDropDown: false,
@@ -68,7 +68,7 @@ export default {
       return this.$store.state.menu.open;
     },
     versions() {
-      return this.$documentationService.getVersions();
+      return this.documentationService.getVersions();
     },
     // currentVersion() {
     //   return this.$route.params.version ? this.$route.params.version : "latest";

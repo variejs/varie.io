@@ -13,6 +13,6 @@ import DocumentationService from "@app/services/DocumentationService";
 @injectable()
 export default class DocumentationServiceProvider extends ServiceProvider {
   public register() {
-    this.app.singleton("$documentationService", DocumentationService);
+    this.app.singleton("DocumentationService", DocumentationService);
   }
 }

@@ -15,7 +15,7 @@ export default Vue.extend({
     },
     content() {
       return {
-        template: this.$parent.$documentationService.page(
+        template: this.$parent.documentationService.page(
           this.$parent.version,
           this.page,
         ),

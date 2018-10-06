@@ -11,7 +11,7 @@ import docsearch from "docsearch.js";
 import throttle from "lodash.throttle";
 
 export default Vue.extend({
-  $inject: ["$documentationService"],
+  $inject: ["DocumentationService"],
   mounted() {
     docsearch({
       apiKey: "453e1f447798dfe06777082b687f06f2",
@@ -86,7 +86,7 @@ export default Vue.extend({
     },
     menu() {
       return {
-        template: this.$documentationService.menu(this.version),
+        template: this.documentationService.menu(this.version),
         mounted() {
           docsearch({
             apiKey: "453e1f447798dfe06777082b687f06f2",
