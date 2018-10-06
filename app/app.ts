@@ -22,8 +22,6 @@ application.boot().then((app) => {
       .install();
   }
 
-  
-  console.info($config);
   new Vue({
     render: (h) => h(BaseLayout),
     router: app.make<RouterInterface>("RouterService").getRouter(),
