@@ -7,8 +7,8 @@ import RouteMiddlewareInterface from "varie/lib/routing/RouteMiddlewareInterface
 export default class CloseMobileMenu implements RouteMiddlewareInterface {
   private $store;
 
-  constructor(@inject("StoreService") storeService: StateServiceInterface) {
-    this.$store = storeService.getStore();
+  constructor(@inject("StateService") stateService: StateServiceInterface) {
+    this.$store = stateService.getStore();
   }
 
   handler(to: Route, from: Route, next: (route?: Location) => void) {
