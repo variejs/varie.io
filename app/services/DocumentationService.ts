@@ -58,15 +58,19 @@ export default class DocumentationService {
   pageMenu(version : string, page : string) {
     let markdownPage = require(`@resources/docs/${version}/${page}.md`);
 
-    let menu = '';
+    let routeName = this.$router.currentRoute;
 
-    let matches = markdownPage.match(/<h(1|2).*/g);
+    let menu = `<h1 class="text-capitalize">${routeName.params.page.replace('-',' ')}</h1>`;
+
+    let matches = markdownPage.match(/<h(1|2|3).*/g);
 
     matches.forEach((menuItem) => {
-      menu += menuItem.replace(/<h(\d).*>(.*)<.*>/, '<li class="menu__level-$1">$2</li>')
+      menu += menuItem.replace(/<h(\d) id="(.*)">(.*)<.*>/, "<li class='documentation__content__links__level--$1'><a href=\"#$2\">$3</a></li>\n")
     })
 
-    return `<ul>${menu}</ul>`
+    menu = this._renderRouterLinks(menu, version);
+
+    return `<ul class="documentation__content__links">${menu}</ul>`
   }
 
   private _renderRouterLinks(html, version) {
@@ -84,7 +88,7 @@ export default class DocumentationService {
             hash : "#$1"
           }'`.replace(/\r?\n|\r/g, ""),
       )
-      .replace(/<li>(<a.*)<\/li>/g, '<li class="has-link">$1</li>')
+      .replace(/<li(.*)>(<a.*)<\/li>/g, '<li $1>$2</li>')
       .replace(/<a (:to.*)>(.*)<.*\/a>/g, "<router-link $1>$2</router-link>")
       .replace(/%7B%7Bversion%7D%7D/g, version);
   }
