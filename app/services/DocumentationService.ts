@@ -55,6 +55,20 @@ export default class DocumentationService {
     }
   }
 
+  pageMenu(version : string, page : string) {
+    let markdownPage = require(`@resources/docs/${version}/${page}.md`);
+
+    let menu = '';
+
+    let matches = markdownPage.match(/<h(1|2).*/g);
+
+    matches.forEach((menuItem) => {
+      menu += menuItem.replace(/<h(\d).*>(.*)<.*>/, '<li class="menu__level-$1">$2</li>')
+    })
+
+    return `<ul>${menu}</ul>`
+  }
+
   private _renderRouterLinks(html, version) {
     let routeName = this.$router.currentRoute.name;
     let routeParams = Object.assign({}, this.$router.currentRoute.params, {
