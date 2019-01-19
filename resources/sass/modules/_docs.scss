@@ -164,14 +164,9 @@
     }
 
     .collection-list {
-      p {
-        column-count: 3;
-        @include breakpoint(md) {
-          column-count: 2;
-        }
-        * {
-          display: block;
-        }
+      column-count: 3;
+      @include breakpoint(md) {
+        column-count: 2;
       }
     }
 
