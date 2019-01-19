@@ -14,7 +14,7 @@
             </router-link>
         </div>
         <div class="nav-button">
-            <a target="_blank" href="https://discordapp.com/invite/yjBtbvm" class="fab fa-discord fa-2x"></a>
+            <a target="_blank" href="https://discord.gg/PAHqzNy" class="fab fa-discord fa-2x"></a>
         </div>
         <div class="nav-button">
             <a href="https://github.com/variejs/varie" class="fab fa-github fa-2x"></a>
