@@ -90,7 +90,6 @@ export default {
       );
     },
     content() {
-      console.info("content rendered");
       return {
         template: this.documentationService.page(this.version, this.page),
       };
