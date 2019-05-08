@@ -1,4 +1,3 @@
 .env
-.cache-loader
 public
 node_modules

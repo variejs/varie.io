@@ -1,14 +1,13 @@
 export default {
   /*
   |--------------------------------------------------------------------------
-  | Custom Rules
+  | Duration
   |--------------------------------------------------------------------------
   |
-  | You can supply your custom rules here
+  | How long a notification will show up, 0 will make it
+  | a forever living notification.
   |
   */
 
-  rules: {
-    // ...
-  },
+  duration: 0,
 };

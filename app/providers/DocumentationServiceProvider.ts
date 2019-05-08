@@ -1,5 +1,5 @@
 import { injectable } from "inversify";
-import ServiceProvider from "varie/lib/support/ServiceProvider";
+import { ServiceProvider } from "varie";
 import DocumentationService from "@app/services/DocumentationService";
 
 /*

@@ -1,5 +1,5 @@
 import MenuStore from "@store/menu/MenuStore";
-import ServiceProvider from "varie/lib/state/StateServiceProvider";
+import { StateServiceProvider as ServiceProvider } from "varie";
 import StateServiceInterface from "varie/lib/state/StateServiceInterface";
 
 /*
@@ -11,7 +11,19 @@ import StateServiceInterface from "varie/lib/state/StateServiceInterface";
 export default class StateServiceProvider extends ServiceProvider {
   public $store: StateServiceInterface;
 
-  map() {
+  public async boot() {
+    super.boot();
+
+    // ...
+  }
+
+  public async register() {
+    super.register();
+
+    // ...
+  }
+
+  public map() {
     this.$store.registerStore(MenuStore);
   }
 }
