@@ -1,11 +1,11 @@
-.navigation {
+.site-header {
   display: flex;
   flex-shrink: 0;
-  border-top: 5px solid $teal;
-  border-bottom: 1px solid $gray;
+  border-top: 5px solid $color-border-accent;
+  border-bottom: 1px solid $color-border;
   position: sticky;
   top: 0;
-  background-color: $white;
+  background-color: $color-background;
   z-index: 900;
   justify-content: flex-end;
 
@@ -16,12 +16,13 @@
   }
 
   &__mobile {
+    cursor: pointer;
     display: none !important;
     @include breakpoint(md) {
       display: inline-block !important;
     }
     &.active {
-      background: lighten($teal, 30%);
+      background: lighten($color-border-accent, 30%);
     }
   }
 
@@ -87,7 +88,7 @@
     }
 
     @include breakpoint(sm) {
-      flex : 1 1 auto;
+      flex: 1 1 auto;
     }
 
     a {
@@ -106,19 +107,20 @@
 }
 
 .search-area {
-  margin: 1rem;
+  margin: 0;
   li {
     display: flex;
     flex: 1 1 auto;
     span {
       display: flex;
       flex: 1 1 auto;
+
       #menu-search {
         width: 100%;
         padding-left: 1rem;
         line-height: 3rem;
         font-size: 1.25rem;
-        border: 1px solid lighten($black, 50%);
+        border: 1px solid lighten($color-text-primary, 50%);
       }
     }
   }

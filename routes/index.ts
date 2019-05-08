@@ -1,9 +1,9 @@
 import middleware from "./middleware";
 import RouterInterface from "varie/lib/routing/RouterInterface";
 
-import Docs from "@views/Docs.vue";
 import ErrorViews from "@views/errors";
-import DocumentationArea from "@views/DocumentationArea.vue";
+import Documentation from "@views/documentation/Documentation.vue";
+import DocumentationArea from "@views/documentation/areas/DocumentationArea.vue";
 
 export default function($router: RouterInterface) {
   /*
@@ -13,18 +13,17 @@ export default function($router: RouterInterface) {
   |
   */
 
-  let docsHomePage = "/docs/latest/what-is-varie";
+  let docsHomePage = `/docs/latest/${$config.get("documentation").defaultPage}`;
 
   $router.redirect("/", docsHomePage);
   $router.redirect("/docs", docsHomePage);
-  $router.redirect("/docs/latest", docsHomePage);
 
   $router
     .prefix("/docs")
     .area(DocumentationArea)
     .middleware([middleware.CloseMobileMenu])
     .group(() => {
-      $router.route(":version?/:page?", Docs).setName("docs");
+      $router.route(":version?/:page?", Documentation).setName("docs");
     });
 
   $router.route("*", ErrorViews.Error404);

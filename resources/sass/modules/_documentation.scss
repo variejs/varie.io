@@ -1,57 +1,13 @@
 .documentation {
-  display: flex;
-  flex: 1 0 auto;
-  overflow: hidden;
-  max-width: 65rem;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  justify-content: center;
-
-  &__body {
-    width: 100%;
-    padding: 1rem 2rem;
-    @include breakpoint(sm) {
-      padding: 1rem 0.25rem;
-    }
-  }
-
   &__content {
-    max-width: 800px;
-
-    h1 {
-      font-size : 2rem;
-    }
-    h2 {
-      font-size : 1.5rem;
-    }
-
-    h3,
-    h4 {
-      font-size : 1.25rem;
-    }
-
-
-    h1,
-    h2 {
-      font-weight: 100;
-    }
-
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-weight: 600;
-    }
+    padding: 0 30px 100px;
 
     h1,
     h2 {
       &:not(:first-child) {
         display: block;
-        padding: 5.5rem 0 0.5rem 0; // THIS IS HACK TO GET HASHES WORKING CORRECTLY
-        margin-top: -3rem;
         &:before {
-          color: $teal;
+          color: $color-text-accent;
           content: "# ";
         }
       }
@@ -63,7 +19,7 @@
         content: "\a0";
         display: block;
         margin-bottom: 1rem;
-        border-bottom: 1px solid #cccccc;
+        border-bottom: 1px solid $color-border;
       }
     }
 
@@ -72,7 +28,7 @@
         margin: 0.25rem 1rem;
         a {
           opacity: 0.8;
-          color: $teal;
+          color: $color-text-accent;
           font-weight: 600;
           &:before {
             content: "# ";
@@ -116,13 +72,21 @@
       margin-bottom: 1rem;
     }
 
+    pre {
+      code {
+        width: 100%;
+        @include breakpoint(sm) {
+          font-size: 0.7rem;
+        }
+      }
+    }
     code {
       max-width: 100%;
       display: inline-block;
       border-radius: 0.1rem;
       padding: 0.25rem;
       margin: 0 0.25rem;
-      background-color: $gray;
+      background-color: $color-background-code;
       vertical-align: text-top;
     }
 
@@ -132,7 +96,7 @@
       padding: 1.5rem;
       color: $white;
       border-radius: 0.25rem;
-      background-color: $red;
+      background-color: $color-state-danger;
       a {
         color: $white;
         text-decoration: underline;
@@ -147,11 +111,11 @@
 
     .info {
       padding: 1.5rem;
-      color: $white;
+      color: $color-text-inverse-primary;
       border-radius: 0.25rem;
-      background-color: lighten($teal, 10%);
+      background-color: lighten($color-border-accent, 10%);
       a {
-        color: $white;
+        color: $color-text-inverse-primary;
         text-decoration: underline;
       }
 
@@ -170,13 +134,14 @@
       }
     }
 
-
     li {
       list-style: circle;
       margin-left: 1rem;
     }
 
     &__links {
+      padding: 0;
+
       li {
         margin-left: 0;
         list-style: none;
@@ -184,66 +149,52 @@
 
       &__level {
         &--2 {
-          margin-left : 0 !important;
+          margin-left: 0 !important;
         }
 
         &--3 {
-          margin-left : 1.5rem !important;;
+          margin-left: 1.5rem !important;
+        }
+      }
+    }
+  }
+}
+
+.nav {
+  white-space: nowrap;
+  border-right: 1px solid $color-border;
+  ul {
+    padding: 0;
+    list-style: none;
+
+    li {
+      ul a {
+        display: block;
+        padding: 0.5rem 0.5rem;
+
+        &:hover,
+        &:active,
+        &:focus {
+          color: $color-text-primary;
+          border-right: 5px solid $color-text-accent;
+          background-color: lighten($color-text-accent, 45%);
+        }
+
+        &.router-link-active {
+          border-right: 5px solid $color-border-accent;
         }
       }
     }
   }
 
-  &__menu {
-    min-width: 275px;
-    overflow-y: auto;
-    border-right: 1px solid $gray;
-    -webkit-overflow-scrolling: touch;
+  #menu-search {
+    display: none;
+  }
 
-    > ul > li {
-      margin-bottom: 1rem;
-
-      h3 {
-        padding: 1rem;
-      }
-      ul a {
-        display: block;
-        padding: 0.5rem 1rem;
-        &:hover,
-        &:active,
-        &:focus {
-          border-right: 5px solid $teal;
-          color: $black;
-          background-color: lighten($teal, 45%);
-        }
-
-        &.router-link-active {
-          border-right: 5px solid $teal;
-        }
-      }
-    }
-
+  // MOBILE MENU
+  @include breakpoint(sm) {
     #menu-search {
-      display: none;
-    }
-
-    // MOBILE MENU
-    @include breakpoint(sm) {
-      width: 100%;
-      position: fixed;
-      top: 4rem;
-      bottom: 0;
-      left: -100%;
-      transition: ease all 0.3s;
-      background-color: $white;
-      z-index: 99;
-      &--open {
-        left: 0;
-        transition: ease all 0.3s;
-      }
-      #menu-search {
-        display: initial;
-      }
+      display: initial;
     }
   }
 }
