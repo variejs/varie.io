@@ -1,3 +1,5 @@
+import goToDocumentationHash from "@app/helpers/goToDocumentationHash";
+
 export default {
   /*
   |--------------------------------------------------------------------------
@@ -56,6 +58,9 @@ export default {
 
   scrollBehavior: (to, from, savedPosition) => {
     if (to.hash) {
+      if (to.name === "docs") {
+        goToDocumentationHash(to.hash);
+      }
       return {
         selector: to.hash,
       };

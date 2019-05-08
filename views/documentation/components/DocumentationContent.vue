@@ -1,6 +1,10 @@
 <template>
   <keep-alive>
-    <div class="content documentation__content" ref="content">
+    <div
+      class="content documentation__content"
+      ref="content"
+      id="documentation"
+    >
       <component
         :is="pageMenu"
         v-if="pageMenu && pageMenu.template"
@@ -15,6 +19,7 @@
 import Prism from "prismjs";
 import throttle from "lodash.throttle";
 import VersionMixin from "@views/documentation/mixins/VersionMixin";
+import goToDocumentationHash from "@app/helpers/goToDocumentationHash";
 
 export default {
   mixins: [VersionMixin],
@@ -35,10 +40,7 @@ export default {
   methods: {
     goToHash() {
       this.$nextTick(() => {
-        let element = document.getElementById(
-          this.$route.hash.replace("#", ""),
-        );
-        this.$refs.content.scrollTop = element.offsetTop;
+        goToDocumentationHash(this.$route.hash);
       });
     },
     onScroll: throttle(function() {
@@ -64,7 +66,7 @@ export default {
 
         if (
           !nextAnchor ||
-          (currentAnchor.offsetTop > currentScroll &&
+          (currentAnchor.offsetTop >= currentScroll &&
             currentAnchor.offsetTop < nextAnchor.offsetTop &&
             this.$route.hash !== currentAnchor.hash)
         ) {
@@ -88,6 +90,7 @@ export default {
       );
     },
     content() {
+      console.info("content rendered");
       return {
         template: this.documentationService.page(this.version, this.page),
       };
