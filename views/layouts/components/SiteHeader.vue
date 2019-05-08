@@ -6,9 +6,11 @@
           <img src="./../../../resources/assets/img/varie.png" />
         </router-link>
       </div>
-      <div v-show="docsPage" class="site-header__search">
+
+      <div class="site-header__search" v-if="docsPage">
         <input id="search" type="text" placeholder="Search" name="search" />
       </div>
+
       <div v-show="docsPage === false">
         <router-link
           :to="{
@@ -41,6 +43,7 @@
           <i class="fal fa-bars fa-2x"></i>
         </span>
       </div>
+
       <div
         class="nav-dropdown"
         @click="showVersionDropDown = !showVersionDropDown"
