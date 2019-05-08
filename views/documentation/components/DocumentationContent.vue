@@ -16,7 +16,7 @@ export default {
   $inject: ["DocumentationService"],
   computed: {
     page() {
-      return this.$route.params.page;
+      return this.$route.params.page || $config.get('documentation.defaultPage');
     },
     content() {
       return {

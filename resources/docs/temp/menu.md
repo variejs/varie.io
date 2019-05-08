@@ -1,0 +1,31 @@
+- ### Prologue
+  - [What is Varie?](/docs/{{version}}/what-is-varie)
+  - [Release Notes](/docs/{{version}}/release-notes)
+  - [Contribution Guide](/docs/{{version}}/contribution-guide)
+- ### Getting Started
+  - [Installation](/docs/{{version}}/installation)
+  - [Configuration](/docs/{{version}}/configuration)
+  - [Directory Structure](/docs/{{version}}/directory-structure)
+  - [Varie CLI](/docs/{{version}}/varie-cli)
+  - [Varie Bundler](/docs/{{version}}/varie-bundler)
+  - [Deployment](/docs/{{version}}/deployment)
+- ### Architecture Concepts
+  - [Lifecycle](/docs/{{version}}/lifecycle)
+  - [Service Container](/docs/{{version}}/service-container)
+  - [Service Providers](/docs/{{version}}/service-providers)
+- ### The Basics
+  - [Views](/docs/{{version}}/views)
+  - [Routing](/docs/{{version}}/routing)
+  - [Forms](/docs/{{version}}/forms)
+  - [Validation](/docs/{{version}}/validation)
+  - [HTTP Requests](/docs/{{version}}/requests)
+  - [State Management](/docs/{{version}}/state)
+- ### Plugins
+  - [Alerts](/docs/{{version}}/alerts)
+  - [Authentication](/docs/{{version}}/authentication)
+  - [Auto Registration](/docs/{{version}}/auto-registration)
+  - [Plugin Development](/docs/{{version}}/plugin-development)
+- ### Digging Deeper
+  - [Cookies](/docs/{{version}}/cookies)
+  - [Storage](/docs/{{version}}/storage)
+  - [Helpers](/docs/{{version}}/helpers)

@@ -59,9 +59,7 @@ export default class DocumentationService {
   pageMenu(version: string, page: string) {
     let markdownPage = require(`@resources/docs/${version}/${page}.md`);
 
-    let routeName = this.$router.currentRoute;
-
-    let menu = `<h1 class="text-capitalize">${routeName.params.page.replace(
+    let menu = `<h1 class="text-capitalize">${page.replace(
       "-",
       " ",
     )}</h1>`;

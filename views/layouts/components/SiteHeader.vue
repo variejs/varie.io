@@ -13,7 +13,7 @@
         <router-link
           :to="{
             name: 'docs',
-            params: { version: versions[0], page: 'what-is-varie' },
+            params: { version: versions[0] },
           }"
         >
           Documentation
@@ -74,7 +74,7 @@ export default {
     selectVersion(version) {
       this.$router.push({
         name: "docs",
-        params: { version: version, page: "what-is-varie" },
+        params: { version: version },
       });
     },
     toggleMenu() {

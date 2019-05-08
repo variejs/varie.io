@@ -3,7 +3,7 @@ import RouterInterface from "varie/lib/routing/RouterInterface";
 
 import ErrorViews from "@views/errors";
 import Documentation from "@views/documentation/Documentation.vue";
-import DocumentationArea from "@views/areas/DocumentationArea.vue";
+import DocumentationArea from "@views/documentation/areas/DocumentationArea.vue";
 
 export default function($router: RouterInterface) {
   /*
@@ -13,11 +13,10 @@ export default function($router: RouterInterface) {
   |
   */
 
-  let docsHomePage = "/docs/latest/what-is-varie";
+  let docsHomePage = `/docs/latest/${$config.get('documentation').defaultPage}`;
 
   $router.redirect("/", docsHomePage);
   $router.redirect("/docs", docsHomePage);
-  $router.redirect("/docs/latest", docsHomePage);
 
   $router
     .prefix("/docs")
