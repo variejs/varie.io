@@ -13,7 +13,7 @@ export default function($router: RouterInterface) {
   |
   */
 
-  let docsHomePage = `/docs/latest/${$config.get('documentation').defaultPage}`;
+  let docsHomePage = `/docs/latest/${$config.get("documentation").defaultPage}`;
 
   $router.redirect("/", docsHomePage);
   $router.redirect("/docs", docsHomePage);

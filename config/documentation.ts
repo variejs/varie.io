@@ -1,3 +1,3 @@
 export default {
-  defaultPage : 'what-is-varie'
-}
+  defaultPage: "what-is-varie",
+};

@@ -59,10 +59,7 @@ export default class DocumentationService {
   pageMenu(version: string, page: string) {
     let markdownPage = require(`@resources/docs/${version}/${page}.md`);
 
-    let menu = `<h1 class="text-capitalize">${page.replace(
-      "-",
-      " ",
-    )}</h1>`;
+    let menu = `<h1 class="text-capitalize">${page.replace("-", " ")}</h1>`;
 
     let matches = markdownPage.match(/<h(1|2|3).*/g);
 
