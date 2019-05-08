@@ -1,15 +1,15 @@
 <template>
     <div id="app">
-        <navigation></navigation>
+        <site-header></site-header>
         <router-view></router-view>
     </div>
 </template>
 
 <script>
-import Navigation from "./components/Navigation";
+import SiteHeader from "./components/SiteHeader";
 export default {
   components: {
-    Navigation,
+    SiteHeader,
   },
 };
 </script>

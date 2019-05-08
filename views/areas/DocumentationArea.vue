@@ -1,24 +1,22 @@
 <template>
-    <div class="documentation">
-       <component class="documentation__menu" :class="{ 'documentation__menu--open' : isMenuOpen }" :is="menu" v-if="menu && menu.template"></component>
-       <router-view></router-view>
-    </div>
+    <router-view></router-view>
 </template>
 
 <script>
-import Vue from "vue";
 import docsearch from "docsearch.js";
 import throttle from "lodash.throttle";
+import VersionMixin from '@views/documentation/mixins/VersionMixin'
 
-export default Vue.extend({
+export default {
+mixins :[VersionMixin],
   $inject: ["DocumentationService"],
   mounted() {
-    docsearch({
-      apiKey: "453e1f447798dfe06777082b687f06f2",
-      indexName: "varie",
-      inputSelector: "#search",
-      debug: false,
-    });
+    // docsearch({
+    //   apiKey: "453e1f447798dfe06777082b687f06f2",
+    //   indexName: "varie",
+    //   inputSelector: "#search",
+    //   debug: false,
+    // });
 
     document.addEventListener("click", this.closeMenu);
     document.addEventListener("scroll", this.onScroll);
@@ -30,11 +28,11 @@ export default Vue.extend({
   },
   methods: {
     closeMenu(e) {
-      if (e.target.id !== "menu-search") {
+      // if (e.target.id !== "menu-search") {
         if (this.isMenuOpen) {
           this.$store.commit("menu/CLOSE_MENU");
         }
-      }
+      // }
     },
     keyDownSearch(e) {
       if (e.key === "/") {
@@ -81,9 +79,6 @@ export default Vue.extend({
     },
   },
   computed: {
-    version() {
-      return this.$route.params.version ? this.$route.params.version : "latest";
-    },
     menu() {
       return {
         template: this.documentationService.menu(this.version),
@@ -101,5 +96,5 @@ export default Vue.extend({
       return this.$store.state.menu.open;
     },
   },
-});
+}
 </script>

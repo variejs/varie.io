@@ -1,0 +1,76 @@
+// LAYOUT ==================================================
+// =========================================================
+
+// This would include any page layout stuff, like grid
+// to place any headers/footers/sidebars needed
+
+html,
+body,
+#app {
+  margin :0;
+  padding : 0;
+  height : 100vh;
+  overflow: hidden;
+}
+
+#app {
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  grid-template-areas : "header" "wrapper";
+
+  border : 2px solid red;
+}
+
+.header {
+  grid-area : header;
+  border : 10px solid green;
+}
+
+.wrapper {
+  position: relative;
+  grid-area: wrapper;
+  border : 10px solid blue;
+
+  display: grid;
+  grid-template-columns : 1fr min-content minmax(500px, 800px) 1fr;
+  grid-template-areas : "left-space nav content right-space";
+}
+
+.nav,
+.wrapper,
+.content {
+  overflow: auto;
+}
+
+.nav {
+  grid-area : nav;
+  background-color : $color-background;
+  border : orange 10px solid;
+}
+
+.content {
+  grid-area : content;
+  border : pink 10px solid;
+}
+
+@include breakpoint(sm) {
+  .wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "content";
+  }
+
+  .nav {
+    grid-area: content;
+    background-color: $gray;
+    z-index: 2;
+    position: relative;
+    right: 100%;
+    transition: right 1s ease;
+
+    &--open {
+      right: 0;
+      transition: right 1s ease;
+    }
+  }
+}

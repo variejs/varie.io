@@ -35,6 +35,7 @@ export default class DocumentationService {
       // ADDING MOBILE SEARCH TO MENU
       return `<div><ul class="search-area"><li><input id="menu-search" type="text" placeholder="Search" name="search"></li></ul>${menuTemplate}</div>`;
     } catch (err) {
+      console.info(err)
       this.$router.push("/404");
     }
   }
@@ -64,9 +65,11 @@ export default class DocumentationService {
 
     let matches = markdownPage.match(/<h(1|2|3).*/g);
 
-    matches.forEach((menuItem) => {
-      menu += menuItem.replace(/<h(\d) id="(.*)">(.*)<.*>/, "<li class='documentation__content__links__level--$1'><a href=\"#$2\">$3</a></li>\n")
-    })
+    if(matches) {
+      matches.forEach((menuItem) => {
+        menu += menuItem.replace(/<h(\d) id="(.*)">(.*)<.*>/, "<li class='documentation__content__links__level--$1'><a href=\"#$2\">$3</a></li>\n")
+      })
+    }
 
     menu = this._renderRouterLinks(menu, version);
 
