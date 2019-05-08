@@ -4,7 +4,7 @@
 // BASE COLORS
 // NOTE: do not use these outside of _variables
 $green: #42b884;
-$blue: #00b8eb;
+$blue: #85cbe5;
 $yellow: #f5ff77;
 $orange: #ffa147;
 $red: #f4645f;
@@ -16,7 +16,8 @@ $gray: #dae1e7;
 // COLOR DECLARATIONS
 // NOTE: use these for application variables
 $color-background: $white;
-$color-background-content: lighten($gray, 10%);
+$color-background-content: darken($gray, 5%);
+$color-background-code: #f5f2f0;
 $color-border: $gray;
 $color-border-accent: $green;
 

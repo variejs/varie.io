@@ -5,22 +5,22 @@
 </template>
 
 <script>
+import DocSearchMixin from "../mixins/DocSearchMixin";
 import VersionMixin from "@views/documentation/mixins/VersionMixin";
+
 export default {
-  mixins: [VersionMixin],
+  mixins: [VersionMixin, DocSearchMixin],
   $inject: ["DocumentationService"],
+  mounted() {
+    this.generateDocSearch("search");
+  },
   computed: {
     menu() {
       return {
+        mixins: [DocSearchMixin],
         template: this.documentationService.menu(this.version),
         mounted() {
-          // TODO - reinsert doc search
-          // docsearch({
-          //   apiKey: "453e1f447798dfe06777082b687f06f2",
-          //   indexName: "varie",
-          //   inputSelector: "#menu-search",
-          //   debug: false,
-          // });
+          this.generateDocSearch("menu-search");
         },
       };
     },

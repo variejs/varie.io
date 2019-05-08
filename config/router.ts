@@ -54,19 +54,15 @@ export default {
   |
   */
 
-  scrollBehavior: (to, from, saved) => {
-    if (saved) {
-      return saved;
-    } else if (to.hash) {
-      if (to.params.replaced) {
-        return false;
-      }
+  scrollBehavior: (to, from, savedPosition) => {
+    if (to.hash) {
       return {
         selector: to.hash,
       };
-    } else {
-      return { x: 0, y: 0 };
+    } else if(savedPosition) {
+      return savedPosition;
     }
+    return { x: 0, y: 0 };
   },
 
   /*

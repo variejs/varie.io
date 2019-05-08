@@ -37,7 +37,7 @@
       <div
         class="site-header__mobile nav-button"
         :class="{ active: isMenuOpen }"
-        @click="toggleMenu"
+        @click.stop="toggleMenu"
       >
         <span>
           <i class="fal fa-bars fa-2x"></i>

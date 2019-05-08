@@ -1,7 +1,7 @@
 const path = require("path");
-const SentryCliPlugin = require("@sentry/webpack-plugin");
-
+const ENV = require("dotenv").config().parsed;
 const VarieBundler = require("varie-bundler");
+const SentryCliPlugin = require("@sentry/webpack-plugin");
 
 module.exports = function(env) {
   return new VarieBundler(env, {
@@ -19,6 +19,14 @@ module.exports = function(env) {
       "@models": "app/models",
       "@resources": "resources",
       "@components": "app/components",
+    })
+    .varieConfig({
+      raven: {
+        url: ENV.RAVEN_URL,
+      },
+      documentation: {
+        apiKey: ENV.DOC_SEARCH_API_KEY,
+      },
     })
     .copy(
       path.join(__dirname, "resources/assets/img/varie-banner.png"),
