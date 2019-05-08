@@ -14,7 +14,7 @@ export default {
   },
   methods: {
     closeMenu(e) {
-      if (e.target.id !== "menu-search" && this.isMenuOpen) {
+      if (e && e.target && e.target.id !== "menu-search" && this.isMenuOpen) {
         this.$store.commit("menu/CLOSE_MENU");
       }
     },

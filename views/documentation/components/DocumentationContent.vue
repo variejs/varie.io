@@ -3,7 +3,7 @@
       <div class="content documentation__content" ref="content">
         <component :is="pageMenu" v-if="pageMenu && pageMenu.template"></component>
         <component :is="content" v-if="content && content.template"></component>
-        <not-found v-if="!contentp"></not-found>
+        <not-found v-if="!content"></not-found>
       </div>
     </keep-alive>
 </template>
