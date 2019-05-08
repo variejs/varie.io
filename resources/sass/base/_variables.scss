@@ -12,12 +12,13 @@ $red: #f4645f;
 $white: #ffffff;
 $black: #525252;
 $gray: #dae1e7;
+$code: #f5f2f0;
 
 // COLOR DECLARATIONS
 // NOTE: use these for application variables
 $color-background: $white;
 $color-background-content: darken($gray, 5%);
-$color-background-code: #f5f2f0;
+$color-background-code: $code;
 $color-border: $gray;
 $color-border-accent: $green;
 

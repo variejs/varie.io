@@ -1,11 +1,14 @@
 <template>
-    <keep-alive>
-      <div class="content documentation__content" ref="content">
-        <component :is="pageMenu" v-if="pageMenu && pageMenu.template"></component>
-        <component :is="content" v-if="content && content.template"></component>
-        <not-found v-if="!content"></not-found>
-      </div>
-    </keep-alive>
+  <keep-alive>
+    <div class="content documentation__content" ref="content">
+      <component
+        :is="pageMenu"
+        v-if="pageMenu && pageMenu.template"
+      ></component>
+      <component :is="content" v-if="content && content.template"></component>
+      <not-found v-if="!content"></not-found>
+    </div>
+  </keep-alive>
 </template>
 
 <script>
@@ -17,10 +20,10 @@ export default {
   mixins: [VersionMixin],
   $inject: ["DocumentationService"],
   mounted() {
-    if(this.$route.hash) {
-      this.goToHash()
+    if (this.$route.hash) {
+      this.goToHash();
     }
-    this.$refs.content.addEventListener('scroll', this.onScroll);
+    this.$refs.content.addEventListener("scroll", this.onScroll);
   },
   watch: {
     content() {
@@ -29,12 +32,14 @@ export default {
       });
     },
   },
-  methods : {
+  methods: {
     goToHash() {
       this.$nextTick(() => {
-        let element = document.getElementById(this.$route.hash.replace('#', ''));
+        let element = document.getElementById(
+          this.$route.hash.replace("#", ""),
+        );
         this.$refs.content.scrollTop = element.offsetTop;
-      })
+      });
     },
     onScroll: throttle(function() {
       this.setActiveHash();
@@ -46,26 +51,35 @@ export default {
         ),
       );
 
-      let currentScroll = this.$refs.content.scrollTop
+      let currentScroll = this.$refs.content.scrollTop;
 
       for (let i = 0; i < anchors.length; i++) {
-        if(currentScroll === 0) {
-          this.setHash()
+        if (currentScroll === 0) {
+          this.setHash();
           return;
         }
 
         const currentAnchor = anchors[i];
         const nextAnchor = anchors[i + 1];
 
-        if (!nextAnchor || currentAnchor.offsetTop > currentScroll && currentAnchor.offsetTop < nextAnchor.offsetTop && this.$route.hash !== currentAnchor.hash) {
-          this.setHash(currentAnchor.id)
+        if (
+          !nextAnchor ||
+          (currentAnchor.offsetTop > currentScroll &&
+            currentAnchor.offsetTop < nextAnchor.offsetTop &&
+            this.$route.hash !== currentAnchor.hash)
+        ) {
+          this.setHash(currentAnchor.id);
           return;
         }
       }
     },
     setHash(id) {
-      history.replaceState(undefined, undefined, `${this.$route.path}${id ? `#${id}` : '' }`)
-    }
+      history.replaceState(
+        undefined,
+        undefined,
+        `${this.$route.path}${id ? `#${id}` : ""}`,
+      );
+    },
   },
   computed: {
     page() {
@@ -84,8 +98,8 @@ export default {
       };
     },
   },
-  beforeDestroy () {
-    this.$refs.content.removeEventListener('scroll', this.onScroll);
-  }
+  beforeDestroy() {
+    this.$refs.content.removeEventListener("scroll", this.onScroll);
+  },
 };
 </script>

@@ -59,7 +59,7 @@ export default {
       return {
         selector: to.hash,
       };
-    } else if(savedPosition) {
+    } else if (savedPosition) {
       return savedPosition;
     }
     return { x: 0, y: 0 };
