@@ -1,5 +1,5 @@
 import { inject, injectable } from "inversify";
-import { VueRouter } from "vue-router/types/router";
+import { VueRouter } from 'vue-router/types/router'
 import RouterInterface from "varie/lib/routing/RouterInterface";
 
 @injectable()
