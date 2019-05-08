@@ -5,9 +5,9 @@ const VarieBundler = require("varie-bundler");
 
 module.exports = function(env) {
   return new VarieBundler(env, {
-    vue : {
-      runtimeOnly : false
-    }
+    vue: {
+      runtimeOnly: false,
+    },
   })
     .entry("app", ["app/app.ts", "resources/sass/app.scss"])
     .aliases({
@@ -20,7 +20,10 @@ module.exports = function(env) {
       "@resources": "resources",
       "@components": "app/components",
     })
-    .copy( path.join(__dirname, "resources/assets/img/varie-banner.png"), "public/img")
+    .copy(
+      path.join(__dirname, "resources/assets/img/varie-banner.png"),
+      "public/img",
+    )
     .chainWebpack((config) => {
       config.module
         .rule("markdown")

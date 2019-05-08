@@ -95,6 +95,6 @@ export default {
      */
     AppServiceProvider,
     AlertServiceProvider,
-    DocumentationServiceProvider
+    DocumentationServiceProvider,
   },
 };

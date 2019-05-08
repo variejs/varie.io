@@ -1,7 +1,7 @@
 <template>
-   <div>
-      <img src="@resources/assets/img/varie_banner.png">
-   </div>
+  <div>
+    <img src="@resources/assets/img/varie_banner.png" />
+  </div>
 </template>
 
 <script>

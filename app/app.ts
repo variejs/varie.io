@@ -14,7 +14,6 @@ import RouterInterface from "varie/lib/routing/RouterInterface";
 import StateServiceInterface from "varie/lib/state/StateServiceInterface";
 
 new Application().boot().then((app) => {
-
   if ($config.get("app.env") === "production") {
     Raven.config(
       "https://e4a9bb84172c4b8bbed481291a6f3423@sentry.codepier.io/8",

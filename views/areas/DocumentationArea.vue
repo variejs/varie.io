@@ -1,14 +1,14 @@
 <template>
-    <router-view></router-view>
+  <router-view></router-view>
 </template>
 
 <script>
 import docsearch from "docsearch.js";
 import throttle from "lodash.throttle";
-import VersionMixin from '@views/documentation/mixins/VersionMixin'
+import VersionMixin from "@views/documentation/mixins/VersionMixin";
 
 export default {
-mixins :[VersionMixin],
+  mixins: [VersionMixin],
   $inject: ["DocumentationService"],
   mounted() {
     // docsearch({
@@ -29,9 +29,9 @@ mixins :[VersionMixin],
   methods: {
     closeMenu(e) {
       // if (e.target.id !== "menu-search") {
-        if (this.isMenuOpen) {
-          this.$store.commit("menu/CLOSE_MENU");
-        }
+      if (this.isMenuOpen) {
+        this.$store.commit("menu/CLOSE_MENU");
+      }
       // }
     },
     keyDownSearch(e) {
@@ -96,5 +96,5 @@ mixins :[VersionMixin],
       return this.$store.state.menu.open;
     },
   },
-}
+};
 </script>

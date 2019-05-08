@@ -7,33 +7,33 @@
 html,
 body,
 #app {
-  margin :0;
-  padding : 0;
-  height : 100vh;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
   overflow: hidden;
 }
 
 #app {
   display: grid;
   grid-template-rows: min-content 1fr;
-  grid-template-areas : "header" "wrapper";
+  grid-template-areas: "header" "wrapper";
 
-  border : 2px solid red;
+  border: 2px solid red;
 }
 
 .header {
-  grid-area : header;
-  border : 10px solid green;
+  grid-area: header;
+  border: 10px solid green;
 }
 
 .wrapper {
   position: relative;
   grid-area: wrapper;
-  border : 10px solid blue;
+  border: 10px solid blue;
 
   display: grid;
-  grid-template-columns : 1fr min-content minmax(500px, 800px) 1fr;
-  grid-template-areas : "left-space nav content right-space";
+  grid-template-columns: 1fr min-content minmax(500px, 800px) 1fr;
+  grid-template-areas: "left-space nav content right-space";
 }
 
 .nav,
@@ -43,14 +43,14 @@ body,
 }
 
 .nav {
-  grid-area : nav;
-  background-color : $color-background;
-  border : orange 10px solid;
+  grid-area: nav;
+  background-color: $color-background;
+  border: orange 10px solid;
 }
 
 .content {
-  grid-area : content;
-  border : pink 10px solid;
+  grid-area: content;
+  border: pink 10px solid;
 }
 
 @include breakpoint(sm) {
