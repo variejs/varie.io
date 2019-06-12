@@ -1,7 +1,8 @@
 export default function goToDocumentationHash(id: string): void {
   setTimeout(() => {
-    document.getElementById(
-      "documentation",
-    ).scrollTop = document.getElementById(id.replace("#", "")).offsetTop;
+    let element = document.getElementById(id.replace("#", ""));
+    if (element) {
+      document.getElementById("documentation").scrollTop = element.offsetTop;
+    }
   }, 0);
 }
