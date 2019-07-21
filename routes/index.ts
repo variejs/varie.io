@@ -4,7 +4,7 @@ import RouterInterface from "varie/lib/routing/RouterInterface";
 import ErrorViews from "@views/errors";
 import Documentation from "@views/documentation/Documentation.vue";
 import DocumentationArea from "@views/documentation/areas/DocumentationArea.vue";
-
+import Temp from '@views/Temp.vue';
 export default function($router: RouterInterface) {
   /*
   |--------------------------------------------------------------------------
@@ -18,6 +18,7 @@ export default function($router: RouterInterface) {
   $router.redirect("/", docsHomePage);
   $router.redirect("/docs", docsHomePage);
 
+  $router.route('/temp', Temp)
   $router
     .prefix("/docs")
     .area(DocumentationArea)

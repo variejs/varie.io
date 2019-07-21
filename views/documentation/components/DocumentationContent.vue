@@ -33,6 +33,7 @@ export default {
   watch: {
     content() {
       this.$nextTick(() => {
+        console.info('HIGHTLIGHT', 123, 'MORE DATA', 456, 'AND MORE!!')
         Prism.highlightAll();
       });
     },
