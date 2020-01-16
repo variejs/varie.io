@@ -1,10 +1,12 @@
-const path = require("path");
-const ENV = require("dotenv").config().parsed;
-const VarieBundler = require("varie-bundler");
-const SentryCliPlugin = require("@sentry/webpack-plugin");
+import path from "path";
+import dotenv from "dotenv";
+import { WebBundler } from "varie-bundler";
+import SentryCliPlugin from "@sentry/webpack-plugin";
 
-module.exports = function(env) {
-  return new VarieBundler(env, {
+const ENV = dotenv.config().parsed;
+
+export default function(env) {
+  return new WebBundler(env, {
     vue: {
       runtimeOnly: false,
     },
@@ -21,6 +23,7 @@ module.exports = function(env) {
       "@components": "app/components",
     })
     .varieConfig({
+      // @ts-ignore
       raven: {
         url: ENV.RAVEN_URL,
       },
@@ -28,10 +31,7 @@ module.exports = function(env) {
         apiKey: ENV.DOC_SEARCH_API_KEY,
       },
     })
-    .copy(
-      path.join(__dirname, "resources/assets/img/varie-banner.png"),
-      "public/img",
-    )
+    .copy("resources/assets/img/varie-banner.png", "public/img")
     .chainWebpack((config) => {
       config.module
         .rule("markdown")
@@ -51,4 +51,4 @@ module.exports = function(env) {
       });
     })
     .build();
-};
+}

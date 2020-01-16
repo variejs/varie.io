@@ -1,29 +1,32 @@
 {
   "private": true,
   "scripts": {
-    "analyze": "npm run dev -- --analyze",
+    "analyze-dev": "npm run dev -- --analyze",
+    "analyze-prod": "npm run dev -- --analyze",
+    "inspect-dev": "npm run dev -- --inspect",
+    "inspect-prod": "npm run dev -- --inspect",
     "dev-modern": "npm run dev -- --modern",
     "prod-modern": "npm run prod -- --modern",
-    "analyze-prod": "npm run dev -- --analyze",
-    "dev": "webpack --env development --no-progress --hide-modules",
-    "prod": "webpack --env production --no-progress --hide-modules",
-    "watch": "webpack-dev-server --mode development --progress --hot"
+    "dev": "cross-env TS_NODE_PROJECT=\"node_modules/varie-bundler/webpack-tsconfig.json\" webpack --env development --no-progress --hide-modules",
+    "prod": "cross-env TS_NODE_PROJECT=\"node_modules/varie-bundler/webpack-tsconfig.json\" webpack --env production --no-progress --hide-modules",
+    "watch": "cross-env TS_NODE_PROJECT=\"node_modules/varie-bundler/webpack-tsconfig.json\" webpack-dev-server --mode development --progress --hot"
   },
   "dependencies": {
-    "@sentry/webpack-plugin": "^1.6.2",
-    "docsearch.js": "^2.6.2",
+    "@sentry/webpack-plugin": "^1.9.3",
+    "docsearch.js": "^2.6.3",
     "lodash.throttle": "^4.1.1",
-    "markdown-loader": "^5.0.0",
+    "markdown-loader": "^5.1.0",
     "normalize.css": "^8.0.1",
-    "prismjs": "^1.16.0",
-    "raven-js": "^3.27.0",
-    "varie": "^0.12.4",
-    "vue": "^2.6.10",
-    "vue-router": "^3.0.6",
-    "vuex": "^3.1.0"
+    "prismjs": "^1.19.0",
+    "raven-js": "^3.27.2",
+    "varie": "^1.0.0",
+    "vue": "^2.6.11",
+    "vue-router": "^3.1.5",
+    "vuex": "^3.1.2"
   },
   "devDependencies": {
-    "varie-bundler": "^0.10.2",
-    "vue-template-compiler": "^2.6.10"
+    "@types/google.analytics": "0.0.40",
+    "varie-bundler": "^2.0.8",
+    "vue-template-compiler": "^2.6.11"
   }
 }

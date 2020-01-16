@@ -8,7 +8,9 @@
 */
 
 import CloseMobileMenu from "./CloseMobileMenu";
+import GoogleAnalytics from "./GoogleAnalytics";
 
 export default {
   CloseMobileMenu,
+  GoogleAnalytics,
 };
