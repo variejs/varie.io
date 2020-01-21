@@ -19,7 +19,7 @@
     "normalize.css": "^8.0.1",
     "prismjs": "^1.19.0",
     "raven-js": "^3.27.2",
-    "varie": "^1.0.0",
+    "varie": "^1.0.1",
     "vue": "^2.6.11",
     "vue-router": "^3.1.5",
     "vuex": "^3.1.2"
