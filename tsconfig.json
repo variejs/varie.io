@@ -1,14 +1,13 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "jsx": "preserve",
+    "target": "es5",
+    "module": "es2015",
+    "moduleResolution": "node",
     "importHelpers": true,
     "esModuleInterop": true,
     "sourceMap": true,
-    "outDir": "./public/",
-    "moduleResolution": "Node",
-    "baseUrl": "",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
     "lib": ["esnext", "dom"],
     "types": [
       "vue",

@@ -29,6 +29,7 @@ body,
 
   display: grid;
   grid-template-columns: 1fr min-content minmax(500px, 800px) 1fr;
+  /* autoprefixer: ignore next */
   grid-template-areas: "left-space nav content right-space";
 }
 

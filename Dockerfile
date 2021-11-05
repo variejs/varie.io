@@ -1,4 +1,4 @@
-FROM node:10-alpine as builder
+FROM node:12-alpine as builder
 RUN apk --no-cache add g++ gcc libgcc libstdc++ linux-headers make python
 
 WORKDIR /build

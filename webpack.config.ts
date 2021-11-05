@@ -1,11 +1,10 @@
-import path from "path";
-import { WebBundler } from "varie-bundler";
-import SentryCliPlugin from "@sentry/webpack-plugin";
+import { WebBundler } from 'varie-bundler'
+import { EnvironmentTypes } from '../varie-bundler/lib/types/EnvironmentTypes'
 
 const ENV = process.env;
 
-export default function(mode) {
-  return new WebBundler(mode, {
+export default function({ production }) {
+  return new WebBundler(production ? EnvironmentTypes.Production : EnvironmentTypes.Development, {
     vue: {
       runtimeOnly: false,
     },
@@ -22,10 +21,6 @@ export default function(mode) {
       "@components": "app/components",
     })
     .varieConfig({
-      // @ts-ignore
-      raven: {
-        url: ENV.RAVEN_URL,
-      },
       documentation: {
         apiKey: ENV.DOC_SEARCH_API_KEY,
       },
@@ -40,14 +35,6 @@ export default function(mode) {
         .end()
         .use("markdown")
         .loader("markdown-loader");
-
-      config.when(mode === "production", (config) => {
-        config.plugin("sentry").use(SentryCliPlugin, [
-          {
-            include: [path.join(__dirname, "public")],
-          },
-        ]);
-      });
     })
     .build();
 }
