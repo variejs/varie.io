@@ -1,12 +1,11 @@
 import { inject, injectable } from "inversify";
 import { VueRouter } from "vue-router/types/router";
-import RouterInterface from "varie/lib/routing/RouterInterface";
 
 @injectable()
 export default class DocumentationService {
   public $router: VueRouter;
 
-  constructor(@inject("RouterService") router: RouterInterface) {
+  constructor(@inject("RouterService") router) {
     this.$router = router.getRouter();
   }
 
@@ -26,7 +25,7 @@ export default class DocumentationService {
 
   menu(version) {
     try {
-      let menuTemplate = require(`@resources/docs/${version}/menu.md`)
+      let menuTemplate = require(`@resources/docs/${version}/menu.md`).default
         .replace(/<a/g, "<router-link")
         .replace(/a>/g, "router-link>")
         .replace(/href/g, "to")
@@ -42,7 +41,7 @@ export default class DocumentationService {
 
   page(version: string, page: string) {
     try {
-      let markdownPage = require(`@resources/docs/${version}/${page}.md`).replace();
+      let markdownPage = require(`@resources/docs/${version}/${page}.md`).default.replace();
 
       markdownPage = this._renderRouterLinks(markdownPage, version);
       markdownPage = this._renderCustomClasses(markdownPage);
@@ -57,8 +56,7 @@ export default class DocumentationService {
   }
 
   pageMenu(version: string, page: string) {
-    let markdownPage = require(`@resources/docs/${version}/${page}.md`);
-
+    let markdownPage = require(`@resources/docs/${version}/${page}.md`).default;
     let menu = `<h1 class="text-capitalize">${page.replace("-", " ")}</h1>`;
 
     let matches = markdownPage.match(/<h(1|2|3).*/g);

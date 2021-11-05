@@ -7,12 +7,11 @@
     "inspect-prod": "npm run dev -- --inspect",
     "dev-modern": "npm run dev -- --modern",
     "prod-modern": "npm run prod -- --modern",
-    "dev": "cross-env TS_NODE_PROJECT=\"node_modules/varie-bundler/webpack-tsconfig.json\" webpack --env development --no-progress --hide-modules",
-    "prod": "cross-env TS_NODE_PROJECT=\"node_modules/varie-bundler/webpack-tsconfig.json\" webpack --env production --no-progress --hide-modules",
+    "dev": "cross-env TS_NODE_PROJECT=\"node_modules/varie-bundler/webpack-tsconfig.json\" webpack --env development",
+    "prod": "cross-env TS_NODE_PROJECT=\"node_modules/varie-bundler/webpack-tsconfig.json\" webpack --env production",
     "watch": "cross-env TS_NODE_PROJECT=\"node_modules/varie-bundler/webpack-tsconfig.json\" webpack-dev-server --mode development --progress --hot"
   },
   "dependencies": {
-    "@sentry/webpack-plugin": "^1.9.3",
     "docsearch.js": "^2.6.3",
     "lodash.throttle": "^4.1.1",
     "markdown-loader": "^5.1.0",
@@ -26,7 +25,7 @@
   },
   "devDependencies": {
     "@types/google.analytics": "0.0.40",
-    "varie-bundler": "^2.0.8",
+    "varie-bundler": "^3.0.0",
     "vue-template-compiler": "^2.6.11"
   }
 }

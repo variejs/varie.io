@@ -1,13 +1,12 @@
 import { Route, Location } from "vue-router";
 import { injectable, inject } from "inversify";
-import StateServiceInterface from "varie/lib/state/StateServiceInterface";
 import RouteMiddlewareInterface from "varie/lib/routing/RouteMiddlewareInterface";
 
 @injectable()
 export default class CloseMobileMenu implements RouteMiddlewareInterface {
   private $store;
 
-  constructor(@inject("StateService") stateService: StateServiceInterface) {
+  constructor(@inject("StateService") stateService) {
     this.$store = stateService.getStore();
   }
 
