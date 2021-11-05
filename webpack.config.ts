@@ -1,12 +1,11 @@
 import path from "path";
-import dotenv from "dotenv";
 import { WebBundler } from "varie-bundler";
 import SentryCliPlugin from "@sentry/webpack-plugin";
 
-const ENV = dotenv.config().parsed;
+const ENV = process.env;
 
-export default function(env) {
-  return new WebBundler(env, {
+export default function(mode) {
+  return new WebBundler(mode, {
     vue: {
       runtimeOnly: false,
     },
@@ -42,7 +41,7 @@ export default function(env) {
         .use("markdown")
         .loader("markdown-loader");
 
-      config.when(env === "production", (config) => {
+      config.when(mode === "production", (config) => {
         config.plugin("sentry").use(SentryCliPlugin, [
           {
             include: [path.join(__dirname, "public")],
