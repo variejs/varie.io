@@ -1,5 +1,5 @@
 import { WebBundler } from 'varie-bundler'
-import { EnvironmentTypes } from '../varie-bundler/lib/types/EnvironmentTypes'
+import { EnvironmentTypes } from 'varie-bundler/lib/types/EnvironmentTypes'
 
 const ENV = process.env;
 
