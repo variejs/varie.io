@@ -24,8 +24,8 @@ jobs:
         with:
           push: true
           tags: |
-            ghcr.io/lukepolo/varie-docs:${{ github.sha }}
-            ghcr.io/lukepolo/varie-docs:latest
+            ghcr.io/${{ github.repository }}/varie-docs:${{ github.sha }}
+            ghcr.io/${{ github.repository }}/varie-docs:latest
       - name: Secure Webhook
         uses: navied/secure-webhook@0.2.1
         with:
