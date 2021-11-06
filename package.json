@@ -14,7 +14,7 @@
   "dependencies": {
     "docsearch.js": "^2.6.3",
     "lodash.throttle": "^4.1.1",
-    "markdown-loader": "^5.1.0",
+    "markdown-loader": "^6.0.0",
     "normalize.css": "^8.0.1",
     "prismjs": "^1.19.0",
     "raven-js": "^3.27.2",
@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@types/google.analytics": "0.0.40",
-    "varie-bundler": "^3.0.1",
+    "varie-bundler": "^3.0.3",
     "vue-template-compiler": "^2.6.11"
   }
 }

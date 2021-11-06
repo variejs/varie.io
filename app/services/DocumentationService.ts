@@ -25,8 +25,8 @@ export default class DocumentationService {
 
   menu(version) {
     try {
-      let menuTemplate = require(`@resources/docs/${version}/menu.md`).default
-        .replace(/<a/g, "<router-link")
+      let menuTemplate = require(`@resources/docs/${version}/menu.md`)
+        .default.replace(/<a/g, "<router-link")
         .replace(/a>/g, "router-link>")
         .replace(/href/g, "to")
         .replace(/%7B%7Bversion%7D%7D/g, version);

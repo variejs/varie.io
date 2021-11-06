@@ -27,6 +27,7 @@
   }
 
   &__search {
+    min-height: 80px;
     @include breakpoint(md) {
       display: none !important;
     }

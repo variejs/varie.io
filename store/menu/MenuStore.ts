@@ -7,8 +7,6 @@ import StoreModule from "varie/lib/state/StoreModule";
 export default class MenuStore extends StoreModule {
   constructor(@inject("HttpService") httpService) {
     super();
-    this.setName("menu")
-      .addState(state)
-      .addMutations(mutations);
+    this.setName("menu").addState(state).addMutations(mutations);
   }
 }

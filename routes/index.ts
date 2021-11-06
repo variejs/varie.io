@@ -5,7 +5,7 @@ import ErrorViews from "@views/errors";
 import Documentation from "@views/documentation/Documentation.vue";
 import DocumentationArea from "@views/documentation/areas/DocumentationArea.vue";
 
-export default function($router: RouterInterface) {
+export default function ($router: RouterInterface) {
   /*
   |--------------------------------------------------------------------------
   | Your default routes for your application

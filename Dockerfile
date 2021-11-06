@@ -1,5 +1,5 @@
 FROM node:12-alpine as builder
-RUN apk --no-cache add g++ gcc libgcc libstdc++ linux-headers make python dh-autoreconf
+RUN apk --no-cache add g++ gcc libgcc libstdc++ linux-headers make python
 
 WORKDIR /build
 

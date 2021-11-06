@@ -43,7 +43,7 @@ export default {
         goToDocumentationHash(this.$route.hash);
       });
     },
-    onScroll: throttle(function() {
+    onScroll: throttle(function () {
       this.setActiveHash();
     }, 100),
     setActiveHash() {

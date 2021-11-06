@@ -1,6 +1,6 @@
 import { MenuState } from "./stateInterface";
 
-export default function() {
+export default function () {
   return {
     OPEN_MENU: (state: MenuState) => {
       state.open = true;

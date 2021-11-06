@@ -15,9 +15,7 @@ import StateServiceInterface from "varie/lib/state/StateServiceInterface";
 
 new Application().boot().then((app) => {
   if ($config.get("app.env") === "production") {
-    Raven.config($config.get("raven.url"))
-      .addPlugin(RavenVue)
-      .install();
+    Raven.config($config.get("raven.url")).addPlugin(RavenVue).install();
   }
 
   new Vue({

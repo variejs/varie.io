@@ -1,14 +1,17 @@
-import { WebBundler } from 'varie-bundler'
-import { EnvironmentTypes } from 'varie-bundler/lib/types/EnvironmentTypes'
+import { WebBundler } from "varie-bundler";
+import { EnvironmentTypes } from "varie-bundler/lib/types/EnvironmentTypes";
 
 const ENV = process.env;
 
-export default function({ production }) {
-  return new WebBundler(production ? EnvironmentTypes.Production : EnvironmentTypes.Development, {
-    vue: {
-      runtimeOnly: false,
+export default function ({ production }) {
+  return new WebBundler(
+    production ? EnvironmentTypes.Production : EnvironmentTypes.Development,
+    {
+      vue: {
+        runtimeOnly: false,
+      },
     },
-  })
+  )
     .entry("app", ["app/app.ts", "resources/sass/app.scss"])
     .aliases({
       "@app": "app",
