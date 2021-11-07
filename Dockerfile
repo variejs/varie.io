@@ -1,5 +1,6 @@
-FROM node:12-alpine as builder
-RUN apk --no-cache add g++ gcc libgcc libstdc++ linux-headers make python
+FROM node:16-alpine as builder
+
+RUN apk add --no-cache autoconf automake file g++ libtool make nasm libpng-dev
 
 WORKDIR /build
 
@@ -8,14 +9,12 @@ RUN npm ci
 
 COPY . .
 
-# Build the project
 RUN npm run prod
 
 
 FROM nginx:alpine
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
 
-# Copy from the stahg 1
 COPY --from=builder /build/public /app
 
 EXPOSE 80
