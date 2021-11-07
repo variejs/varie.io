@@ -35,6 +35,9 @@ export default function ({ production }) {
         .test(/\.md$/)
         .use("html")
         .loader("html-loader")
+        .options({
+            minimize: false
+        })
         .end()
         .use("markdown")
         .loader("markdown-loader");
