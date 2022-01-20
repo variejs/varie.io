@@ -14,8 +14,9 @@ export default {
         try {
           docsearch({
             indexName: "varie",
+            appId: "D3Y4VSJS08",
             inputSelector: `#${selector}`,
-            apiKey: "453e1f447798dfe06777082b687f06f2",
+            apiKey: "27d3603b119f10625aa67d5cf98d07e5",
           });
         } catch (error) {
           console.warn("unable to load doc search");
